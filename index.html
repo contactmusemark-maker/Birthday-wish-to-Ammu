@@ -387,7 +387,7 @@
 <div id="s-intro" class="screen active">
   <div class="big-icon"><i data-lucide="gift" style="width:56px;height:56px;stroke:#f72585;stroke-width:1.5;"></i></div>
   <div class="title">A surprise is waiting for you...</div>
-  <div class="sub">This gift unlocks on June 8th <i data-lucide="flower-2" style="width:15px;height:15px;stroke:#f72585;vertical-align:middle;"></i></div>
+  <div class="sub">🎂 Happy Birthday Ammu!<br><br>I didn't want my wish to interrupt your day or spoil any moment... so I kept this for the end 💜<br><br>Enjoy every second of your birthday, be happy &amp; have the best day! 🌸<br>This gift unlocks when you get back home 🏠✨</div>
   <div class="countdown-box">
     <div class="cd-label">OPENS IN</div>
     <div class="cd-grid">
@@ -400,7 +400,7 @@
       <div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">SEC</div></div>
     </div>
   </div>
-  <div class="sub" id="cd-msg" style="display:none;color:#f72585;font-size:15px;font-weight:700;opacity:1;"><i data-lucide="party-popper" style="width:16px;height:16px;stroke:#a855f7;vertical-align:middle;"></i> Today is the day! Open your gift!</div>
+  <div class="sub" id="cd-msg" style="display:none;color:#f72585;font-size:15px;font-weight:700;opacity:1;line-height:1.8;text-align:center;">🎉 Welcome back home! Your gift is ready to open! 🎁<br><span style="font-size:13px;font-weight:500;color:#7209b7;">Hope you had the most amazing birthday! 💜</span></div>
   <button class="pink-btn" id="open-gift-btn" style="display:none;" onclick="go('s-wish')"><i data-lucide="gift" style="width:18px;height:18px;stroke:#ffffff;"></i> Open your gift</button>
 </div>
 
@@ -423,12 +423,74 @@ Wishing you lots of happiness, success, good health, and peace in life 🌹 Take
 
 Martin 🤍</div>
   </div>
+  <button class="pink-btn" onclick="go('s-cake')">🎂 Blow out your candles!</button>
+</div>
+
+<!-- S2B: CAKE & CANDLES -->
+<div id="s-cake" class="screen">
+  <button class="back-btn" onclick="go('s-wish')"><i data-lucide="arrow-left" style="width:14px;height:14px;stroke:#a855f7;"></i> Back</button>
+  <div class="title">Make a wish! 🕯️</div>
+  <div class="sub">Blow into your mic or tap each candle to blow it out 🎂</div>
+
+  <div style="width:100%;background:#fff;border:1.5px solid var(--card-border);border-radius:var(--radius-card);padding:28px 20px;text-align:center;box-shadow:var(--shadow-md);">
+    <!-- Candles -->
+    <canvas id="cake-canvas" width="340" height="360" style="width:100%;max-width:340px;touch-action:none;cursor:pointer;"></canvas>
+    <div id="cake-msg" style="margin-top:14px;font-size:14px;color:#7209b7;font-weight:600;min-height:22px;font-family:'IBM Plex Mono',monospace;"></div>
+    <div style="display:flex;gap:10px;margin-top:16px;justify-content:center;flex-wrap:wrap;">
+      <button onclick="startMic()" id="mic-btn" style="background:var(--grad-btn);border:none;border-radius:999px;padding:11px 22px;font-size:13px;font-weight:700;color:#fff;cursor:pointer;font-family:'IBM Plex Mono',monospace;box-shadow:var(--shadow-pink);display:flex;align-items:center;gap:7px;"><i data-lucide="mic" style="width:15px;height:15px;stroke:#fff;"></i> Blow (mic)</button>
+      <button onclick="resetCandles()" style="background:var(--grad-btn2);border:none;border-radius:999px;padding:11px 22px;font-size:13px;font-weight:700;color:#fff;cursor:pointer;font-family:'IBM Plex Mono',monospace;display:flex;align-items:center;gap:7px;"><i data-lucide="rotate-ccw" style="width:15px;height:15px;stroke:#fff;"></i> Reset</button>
+    </div>
+  </div>
+
+  <button class="pink-btn" id="cake-next-btn" style="display:none;" onclick="go('s-stars')">✨ See your star map</button>
+</div>
+
+<!-- S2C: STAR MAP -->
+<div id="s-stars" class="screen">
+  <button class="back-btn" onclick="go('s-cake')"><i data-lucide="arrow-left" style="width:14px;height:14px;stroke:#a855f7;"></i> Back</button>
+  <div class="title">Your birthday sky 🌌</div>
+  <div class="sub">This is how the stars looked on <strong style="color:#f72585;">June 13, 2002</strong> — the night you were born ✨</div>
+
+  <div style="width:100%;border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-lg);border:1.5px solid var(--card-border);position:relative;">
+    <canvas id="star-canvas" width="380" height="380" style="width:100%;display:block;background:linear-gradient(180deg,#0a0020 0%,#0d0535 40%,#1a0a4a 100%);"></canvas>
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 20px;background:linear-gradient(0deg,rgba(10,0,32,0.95),transparent);text-align:center;">
+      <div style="font-size:13px;color:#e0c8ff;font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:0.05em;">June 13, 2002 · Chennai, India</div>
+      <div style="font-size:11px;color:#a855f7;margin-top:4px;font-family:'IBM Plex Mono',monospace;">The universe celebrated too 🌠</div>
+    </div>
+  </div>
+
+  <div style="width:100%;background:#fff;border:1.5px solid var(--card-border);border-radius:var(--radius-card);padding:18px 20px;box-shadow:var(--shadow-sm);">
+    <div style="font-size:12px;font-weight:700;color:#a855f7;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;font-family:'IBM Plex Mono',monospace;">✨ Your birthday constellations</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div style="background:linear-gradient(135deg,rgba(247,37,133,0.07),rgba(114,9,183,0.07));border-radius:14px;padding:12px;border:1px solid var(--card-border);">
+        <div style="font-size:18px;margin-bottom:4px;">♊</div>
+        <div style="font-size:12px;font-weight:700;color:#2a0a3a;font-family:'IBM Plex Mono',monospace;">Gemini</div>
+        <div style="font-size:10px;color:#9b6bc4;font-family:'IBM Plex Mono',monospace;">Your sun sign</div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(247,37,133,0.07),rgba(114,9,183,0.07));border-radius:14px;padding:12px;border:1px solid var(--card-border);">
+        <div style="font-size:18px;margin-bottom:4px;">⭐</div>
+        <div style="font-size:12px;font-weight:700;color:#2a0a3a;font-family:'IBM Plex Mono',monospace;">Orion</div>
+        <div style="font-size:10px;color:#9b6bc4;font-family:'IBM Plex Mono',monospace;">Rising in the east</div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(247,37,133,0.07),rgba(114,9,183,0.07));border-radius:14px;padding:12px;border:1px solid var(--card-border);">
+        <div style="font-size:18px;margin-bottom:4px;">🌙</div>
+        <div style="font-size:12px;font-weight:700;color:#2a0a3a;font-family:'IBM Plex Mono',monospace;">Waxing Moon</div>
+        <div style="font-size:10px;color:#9b6bc4;font-family:'IBM Plex Mono',monospace;">62% illuminated</div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(247,37,133,0.07),rgba(114,9,183,0.07));border-radius:14px;padding:12px;border:1px solid var(--card-border);">
+        <div style="font-size:18px;margin-bottom:4px;">💫</div>
+        <div style="font-size:12px;font-weight:700;color:#2a0a3a;font-family:'IBM Plex Mono',monospace;">Venus</div>
+        <div style="font-size:10px;color:#9b6bc4;font-family:'IBM Plex Mono',monospace;">Planet of love 💜</div>
+      </div>
+    </div>
+  </div>
+
   <button class="pink-btn" onclick="go('s-photo1')"><i data-lucide="camera" style="width:18px;height:18px;stroke:#ffffff;"></i> See your photos</button>
 </div>
 
 <!-- S3: PHOTO 1 -->
 <div id="s-photo1" class="screen">
-  <button class="back-btn" onclick="go('s-wish')"><i data-lucide="arrow-left" style="width:14px;height:14px;stroke:#a855f7;"></i> Back</button>
+  <button class="back-btn" onclick="go('s-stars')"><i data-lucide="arrow-left" style="width:14px;height:14px;stroke:#a855f7;"></i> Back</button>
   <div class="title">Photo 1 of 2 <i data-lucide="flower-2" style="width:18px;height:18px;stroke:#a855f7;vertical-align:middle;"></i></div>
   <div class="dots"><div class="dot active"></div><div class="dot"></div><div class="dot" style="background:#f9a8d4;width:6px;height:6px;opacity:0.5;"></div></div>
   <div class="photo-card">
@@ -682,7 +744,395 @@ function confetti() {
   }
 }
 
-// Init Lucide icons
+// ── CAKE & CANDLES ──
+const TOTAL_CANDLES = 6;
+let candles = [];
+let audioCtx = null;
+let micActive = false;
+const CANDLE_COLORS = ['#f72585','#fbbf24','#4cc9f0','#a855f7','#f97316','#34d399'];
+
+function initCake() {
+  candles = Array.from({length: TOTAL_CANDLES}, (_, i) => ({ lit: true, id: i }));
+  drawCake();
+}
+
+function drawCake() {
+  const canvas = document.getElementById('cake-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+
+  // ── PLATE ──
+  const plateGrad = ctx.createEllipse ? null : null;
+  ctx.fillStyle = 'rgba(168,85,247,0.15)';
+  ctx.beginPath(); ctx.ellipse(W/2, H - 30, 130, 18, 0, 0, Math.PI*2); ctx.fill();
+
+  // ── BOTTOM TIER ──
+  const b1y = H - 90, b1h = 80, b1x = W/2 - 140, b1w = 280;
+  const gBot = ctx.createLinearGradient(b1x, b1y, b1x, b1y+b1h);
+  gBot.addColorStop(0,'#f72585'); gBot.addColorStop(0.5,'#c920c9'); gBot.addColorStop(1,'#7209b7');
+  ctx.fillStyle = gBot; roundRect(ctx, b1x, b1y, b1w, b1h, 18); ctx.fill();
+  // side shine
+  ctx.fillStyle = 'rgba(255,255,255,0.12)';
+  roundRect(ctx, b1x, b1y, b1w, 18, 18); ctx.fill();
+
+  // ── BOTTOM FROSTING DRIPS ──
+  drawDrips(ctx, b1x+10, b1y+4, b1w-20, 9, 14);
+
+  // ── BOTTOM DECORATION: hearts ──
+  ctx.font = '16px serif';
+  ctx.fillText('♥', b1x+30, b1y+50); ctx.fillText('★', b1x+80, b1y+55);
+  ctx.fillText('♥', b1x+160, b1y+48); ctx.fillText('★', b1x+220, b1y+55);
+
+  // ── MIDDLE TIER ──
+  const m1y = b1y - 72, m1h = 72, m1x = W/2 - 105, m1w = 210;
+  const gMid = ctx.createLinearGradient(m1x, m1y, m1x, m1y+m1h);
+  gMid.addColorStop(0,'#b833e8'); gMid.addColorStop(1,'#5e0fa3');
+  ctx.fillStyle = gMid; roundRect(ctx, m1x, m1y, m1w, m1h, 14); ctx.fill();
+  ctx.fillStyle = 'rgba(255,255,255,0.1)';
+  roundRect(ctx, m1x, m1y, m1w, 14, 14); ctx.fill();
+
+  // ── MIDDLE FROSTING DRIPS ──
+  drawDrips(ctx, m1x+8, m1y+4, m1w-16, 8, 11);
+
+  // ── MIDDLE DECORATION: dots ──
+  const dotColors = ['#fbbf24','#4cc9f0','#f72585','#fff'];
+  for(let i=0;i<8;i++){
+    ctx.fillStyle = dotColors[i%4];
+    ctx.beginPath(); ctx.arc(m1x+20+i*24, m1y+42, 5, 0, Math.PI*2); ctx.fill();
+  }
+
+  // ── TOP TIER ──
+  const t1y = m1y - 60, t1h = 60, t1x = W/2 - 70, t1w = 140;
+  const gTop = ctx.createLinearGradient(t1x, t1y, t1x, t1y+t1h);
+  gTop.addColorStop(0,'#f72585'); gTop.addColorStop(1,'#9b2ef5');
+  ctx.fillStyle = gTop; roundRect(ctx, t1x, t1y, t1w, t1h, 12); ctx.fill();
+  ctx.fillStyle = 'rgba(255,255,255,0.12)';
+  roundRect(ctx, t1x, t1y, t1w, 12, 12); ctx.fill();
+
+  // ── TOP FROSTING DRIPS ──
+  drawDrips(ctx, t1x+6, t1y+4, t1w-12, 7, 8);
+
+  // ── TOP DECORATION: "24" ──
+  ctx.fillStyle = '#fff';
+  ctx.font = 'bold 22px IBM Plex Mono, monospace';
+  ctx.textAlign = 'center';
+  ctx.fillText('24', W/2, t1y + 40);
+  ctx.textAlign = 'left';
+
+  // ── SPRINKLES (fixed seed) ──
+  const sprinkleData = [
+    {x:0.22,y:0.62,r:0.18,c:'#fbbf24'},{x:0.55,y:0.65,r:0.3,c:'#4cc9f0'},
+    {x:0.75,y:0.60,r:0.05,c:'#f72585'},{x:0.35,y:0.70,r:0.45,c:'#a855f7'},
+    {x:0.65,y:0.72,r:0.1,c:'#fff'},{x:0.45,y:0.58,r:0.22,c:'#fbbf24'},
+    {x:0.30,y:0.52,r:0.35,c:'#4cc9f0'},{x:0.70,y:0.55,r:0.6,c:'#f97316'},
+    {x:0.50,y:0.68,r:0.15,c:'#fff'},{x:0.25,y:0.75,r:0.5,c:'#34d399'},
+    {x:0.60,y:0.47,r:0.28,c:'#fbbf24'},{x:0.40,y:0.78,r:0.0,c:'#f72585'},
+  ];
+  sprinkleData.forEach(s => {
+    ctx.save(); ctx.translate(b1x+10 + s.x*(b1w-20), b1y+10 + s.y*60);
+    ctx.rotate(s.r * Math.PI * 2); ctx.fillStyle = s.c;
+    ctx.fillRect(-5, -1.8, 10, 3.5); ctx.restore();
+  });
+
+  // ── CANDLES ──
+  const litCount = candles.filter(c => c.lit).length;
+  const cSpacing = (t1w - 20) / TOTAL_CANDLES;
+  candles.forEach((c, i) => {
+    const cx = t1x + 10 + i * cSpacing + cSpacing/2;
+    const cy = t1y - 2;
+    drawBigCandle(ctx, cx, cy, c.lit, CANDLE_COLORS[i % CANDLE_COLORS.length]);
+  });
+
+  // ── MESSAGE ──
+  const msg = document.getElementById('cake-msg');
+  if (litCount === 0) {
+    msg.innerHTML = '🎉 All 6 candles blown! <br>Happy Birthday Ammu! 🎂💜';
+    document.getElementById('cake-next-btn').style.display = 'flex';
+    confetti(); confetti();
+  } else if (litCount < TOTAL_CANDLES) {
+    msg.textContent = `${TOTAL_CANDLES - litCount} blown! ${litCount} left... keep going! 💨`;
+  } else {
+    msg.textContent = 'Tap the cake or blow into your mic! 🎙️';
+  }
+}
+
+function drawBigCandle(ctx, x, baseY, lit, color) {
+  const cH = 38, cW = 10;
+  const top = baseY - cH;
+
+  // Candle body gradient
+  const cg = ctx.createLinearGradient(x-cW/2, top, x+cW/2, top);
+  cg.addColorStop(0, lighten(color, 40)); cg.addColorStop(0.5, color); cg.addColorStop(1, darken(color, 30));
+  ctx.fillStyle = cg;
+  roundRect(ctx, x - cW/2, top, cW, cH, 3); ctx.fill();
+
+  // Shine stripe
+  ctx.fillStyle = 'rgba(255,255,255,0.35)';
+  roundRect(ctx, x - cW/2 + 2, top + 4, 3, cH - 8, 2); ctx.fill();
+
+  // Wick
+  ctx.strokeStyle = '#4a3000'; ctx.lineWidth = 1.5; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.moveTo(x, top); ctx.lineTo(x+1, top - 8); ctx.stroke();
+
+  if (lit) {
+    // Outer glow
+    const outerGlow = ctx.createRadialGradient(x, top-14, 0, x, top-14, 22);
+    outerGlow.addColorStop(0, 'rgba(255,200,50,0.45)');
+    outerGlow.addColorStop(0.5, 'rgba(255,120,0,0.2)');
+    outerGlow.addColorStop(1, 'rgba(255,80,0,0)');
+    ctx.fillStyle = outerGlow;
+    ctx.beginPath(); ctx.arc(x, top-14, 22, 0, Math.PI*2); ctx.fill();
+
+    // Flame outer (orange)
+    ctx.fillStyle = '#ff6b00';
+    ctx.beginPath();
+    ctx.moveTo(x, top - 28);
+    ctx.bezierCurveTo(x+8, top-22, x+7, top-8, x, top-8);
+    ctx.bezierCurveTo(x-7, top-8, x-8, top-22, x, top-28);
+    ctx.fill();
+
+    // Flame mid (yellow)
+    ctx.fillStyle = '#fbbf24';
+    ctx.beginPath();
+    ctx.moveTo(x, top - 26);
+    ctx.bezierCurveTo(x+5, top-20, x+5, top-10, x, top-10);
+    ctx.bezierCurveTo(x-5, top-10, x-5, top-20, x, top-26);
+    ctx.fill();
+
+    // Flame inner (white-yellow)
+    ctx.fillStyle = '#fff9c4';
+    ctx.beginPath();
+    ctx.moveTo(x, top - 23);
+    ctx.bezierCurveTo(x+2.5, top-19, x+2.5, top-12, x, top-12);
+    ctx.bezierCurveTo(x-2.5, top-12, x-2.5, top-19, x, top-23);
+    ctx.fill();
+
+    // Flame tip (white)
+    ctx.fillStyle = 'rgba(255,255,255,0.9)';
+    ctx.beginPath(); ctx.arc(x, top-21, 2, 0, Math.PI*2); ctx.fill();
+  } else {
+    // Smoke wisp
+    ctx.strokeStyle = 'rgba(150,150,150,0.4)'; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(x+1, top-8);
+    ctx.bezierCurveTo(x+4, top-14, x-3, top-18, x+2, top-24); ctx.stroke();
+  }
+}
+
+function lighten(hex, amt) {
+  const n = parseInt(hex.slice(1),16);
+  const r=Math.min(255,(n>>16)+amt), g=Math.min(255,((n>>8)&0xff)+amt), b=Math.min(255,(n&0xff)+amt);
+  return `rgb(${r},${g},${b})`;
+}
+function darken(hex, amt) {
+  const n = parseInt(hex.slice(1),16);
+  const r=Math.max(0,(n>>16)-amt), g=Math.max(0,((n>>8)&0xff)-amt), b=Math.max(0,(n&0xff)-amt);
+  return `rgb(${r},${g},${b})`;
+}
+
+function drawDrips(ctx, x, y, w, dripH, count) {
+  ctx.fillStyle = 'rgba(255,255,255,0.92)';
+  const spacing = w / count;
+  for (let i = 0; i < count; i++) {
+    const dx = x + i * spacing + spacing/2;
+    ctx.beginPath();
+    ctx.arc(dx, y, spacing*0.38, 0, Math.PI*2); ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(dx - spacing*0.25, y);
+    ctx.lineTo(dx + spacing*0.25, y);
+    ctx.lineTo(dx + spacing*0.18, y + dripH);
+    ctx.arc(dx, y + dripH, spacing*0.18, 0, Math.PI); ctx.closePath(); ctx.fill();
+  }
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y); ctx.arcTo(x+w, y, x+w, y+r, r);
+  ctx.lineTo(x+w, y+h-r); ctx.arcTo(x+w,y+h,x+w-r,y+h,r);
+  ctx.lineTo(x+r,y+h); ctx.arcTo(x,y+h,x,y+h-r,r);
+  ctx.lineTo(x,y+r); ctx.arcTo(x,y,x+r,y,r);
+  ctx.closePath();
+}
+
+function blowCandle() {
+  const lit = candles.filter(c => c.lit);
+  if (lit.length === 0) return;
+  const idx = Math.floor(Math.random() * lit.length);
+  lit[idx].lit = false;
+  drawCake();
+}
+
+function resetCandles() {
+  candles.forEach(c => c.lit = true);
+  document.getElementById('cake-next-btn').style.display = 'none';
+  document.getElementById('cake-msg').textContent = '';
+  drawCake();
+}
+
+// Tap to blow candle
+document.addEventListener('DOMContentLoaded', () => {
+  const canvas = document.getElementById('cake-canvas');
+  if (canvas) {
+    canvas.addEventListener('click', (e) => {
+      blowCandle();
+    });
+    canvas.addEventListener('touchend', (e) => {
+      e.preventDefault(); blowCandle();
+    });
+    initCake();
+  }
+  drawStarMap();
+});
+
+async function startMic() {
+  if (micActive) return;
+  const btn = document.getElementById('mic-btn');
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const source = audioCtx.createMediaStreamSource(stream);
+    const analyser = audioCtx.createAnalyser();
+    analyser.fftSize = 512;
+    analyser.smoothingTimeConstant = 0.3;
+    source.connect(analyser);
+    const data = new Uint8Array(analyser.frequencyBinCount);
+    micActive = true;
+    btn.innerHTML = '<i data-lucide="mic" style="width:15px;height:15px;stroke:#fff;"></i> Listening... blow now!';
+    lucide.createIcons();
+    btn.style.background = 'linear-gradient(135deg,#059669,#065f46)';
+
+    let cooldown = false;
+
+    function check() {
+      if (!micActive) return;
+      analyser.getByteFrequencyData(data);
+
+      // Check low-freq energy (breath/blow is mostly low frequency)
+      let lowFreqEnergy = 0;
+      for (let i = 0; i < 30; i++) lowFreqEnergy += data[i];
+      lowFreqEnergy = lowFreqEnergy / 30;
+
+      // Also check overall volume
+      const total = data.reduce((a,b) => a+b, 0) / data.length;
+
+      if ((lowFreqEnergy > 10 || total > 8) && !cooldown) {
+        cooldown = true;
+        blowCandle();
+        setTimeout(() => { cooldown = false; }, 400);
+      }
+
+      const litLeft = candles.filter(c => c.lit).length;
+      if (litLeft > 0) {
+        requestAnimationFrame(check);
+      } else {
+        micActive = false;
+        stream.getTracks().forEach(t => t.stop());
+        btn.innerHTML = '<i data-lucide="mic" style="width:15px;height:15px;stroke:#fff;"></i> Blow (mic)';
+        lucide.createIcons();
+        btn.style.background = '';
+      }
+    }
+    check();
+  } catch(e) {
+    btn.innerHTML = '<i data-lucide="mic-off" style="width:15px;height:15px;stroke:#fff;"></i> Mic denied — tap instead';
+    lucide.createIcons();
+    btn.style.background = '';
+  }
+}
+
+// ── STAR MAP ──
+function drawStarMap() {
+  const canvas = document.getElementById('star-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+
+  // Background gradient
+  const bg = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, W*0.7);
+  bg.addColorStop(0, '#1a0a4a'); bg.addColorStop(1, '#0a0020');
+  ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+
+  // Stars - seeded positions for June 13 2002 Chennai sky feel
+  const starData = [
+    // Orion belt
+    {x:0.35,y:0.42,r:2.2,b:1},{x:0.42,y:0.40,r:2.4,b:1},{x:0.49,y:0.38,r:2.2,b:1},
+    // Gemini twins
+    {x:0.62,y:0.28,r:2.8,b:1,name:'Pollux'},{x:0.68,y:0.22,r:2.5,b:1,name:'Castor'},
+    {x:0.72,y:0.32,r:1.5,b:0.7},{x:0.65,y:0.35,r:1.4,b:0.7},
+    // Sirius
+    {x:0.28,y:0.55,r:3.2,b:1,name:'Sirius'},
+    // Venus
+    {x:0.78,y:0.18,r:3.8,b:1,name:'Venus ♀',color:'#ffd6f0'},
+    // Moon
+    {x:0.2,y:0.22,r:12,b:1,moon:true},
+    // Scattered stars
+    {x:0.15,y:0.15,r:1.2,b:0.6},{x:0.9,y:0.45,r:1.8,b:0.8},{x:0.55,y:0.6,r:1.3,b:0.5},
+    {x:0.8,y:0.6,r:1.5,b:0.7},{x:0.1,y:0.7,r:1.1,b:0.5},{x:0.45,y:0.15,r:1.6,b:0.6},
+    {x:0.3,y:0.3,r:1.0,b:0.5},{x:0.6,y:0.5,r:1.2,b:0.6},{x:0.25,y:0.65,r:1.4,b:0.6},
+    {x:0.7,y:0.7,r:1.0,b:0.4},{x:0.85,y:0.3,r:1.3,b:0.6},{x:0.5,y:0.78,r:1.1,b:0.5},
+    {x:0.38,y:0.7,r:0.9,b:0.4},{x:0.92,y:0.15,r:1.5,b:0.7},{x:0.12,y:0.45,r:1.0,b:0.4},
+  ];
+
+  // Draw Orion constellation lines
+  ctx.strokeStyle = 'rgba(168,85,247,0.3)'; ctx.lineWidth = 0.8;
+  [[0,1],[1,2]].forEach(([a,b]) => {
+    ctx.beginPath();
+    ctx.moveTo(starData[a].x*W, starData[a].y*H);
+    ctx.lineTo(starData[b].x*W, starData[b].y*H); ctx.stroke();
+  });
+  // Gemini lines
+  [[3,5],[4,6],[5,6]].forEach(([a,b]) => {
+    ctx.beginPath();
+    ctx.moveTo(starData[a].x*W, starData[a].y*H);
+    ctx.lineTo(starData[b].x*W, starData[b].y*H); ctx.stroke();
+  });
+
+  // Add many small random background stars
+  ctx.save();
+  for (let i = 0; i < 120; i++) {
+    const x = Math.random() * W, y = Math.random() * H;
+    const r = 0.3 + Math.random() * 0.9;
+    const alpha = 0.2 + Math.random() * 0.6;
+    ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
+  }
+  ctx.restore();
+
+  // Draw each star
+  starData.forEach(s => {
+    const sx = s.x * W, sy = s.y * H;
+    if (s.moon) {
+      // Crescent moon
+      ctx.fillStyle = '#fffde7';
+      ctx.shadowColor = '#fff9c4'; ctx.shadowBlur = 20;
+      ctx.beginPath(); ctx.arc(sx, sy, s.r, 0, Math.PI*2); ctx.fill();
+      ctx.fillStyle = '#0d0535';
+      ctx.beginPath(); ctx.arc(sx+5, sy-3, s.r*0.75, 0, Math.PI*2); ctx.fill();
+      ctx.shadowBlur = 0;
+      return;
+    }
+    const color = s.color || '#ffffff';
+    const glow = ctx.createRadialGradient(sx,sy,0,sx,sy,s.r*4);
+    glow.addColorStop(0, color); glow.addColorStop(0.4, color+'99'); glow.addColorStop(1,'transparent');
+    ctx.fillStyle = glow;
+    ctx.beginPath(); ctx.arc(sx, sy, s.r*4, 0, Math.PI*2); ctx.fill();
+    ctx.fillStyle = color;
+    ctx.beginPath(); ctx.arc(sx, sy, s.r, 0, Math.PI*2); ctx.fill();
+
+    if (s.name) {
+      ctx.fillStyle = 'rgba(224,200,255,0.85)';
+      ctx.font = `500 9px 'IBM Plex Mono', monospace`;
+      ctx.fillText(s.name, sx + s.r + 4, sy + 3);
+    }
+  });
+
+  // Milky way hint
+  const mw = ctx.createLinearGradient(0, H*0.3, W, H*0.8);
+  mw.addColorStop(0,'transparent'); mw.addColorStop(0.5,'rgba(180,140,255,0.04)'); mw.addColorStop(1,'transparent');
+  ctx.fillStyle = mw; ctx.fillRect(0,0,W,H);
+}
 document.addEventListener('DOMContentLoaded', () => {
   lucide.createIcons();
 
