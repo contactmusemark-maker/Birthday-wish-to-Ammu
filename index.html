@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Happy Birthday Ammu 🎀</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Happy Birthday Ammu 🎀">
+<meta property="og:description" content="A special birthday surprise just for you 🌸">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+
+<!-- WhatsApp / Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Happy Birthday Ammu 🎀">
+<meta name="twitter:description" content="A special birthday surprise just for you 🌸">
+<meta name="twitter:image" content="og-image.png">
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #fff0f6;
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 24px 16px 40px;
+  }
+  .screen { display: none; flex-direction: column; align-items: center; width: 100%; max-width: 400px; gap: 16px; animation: fadeUp 0.45s ease; }
+  .screen.active { display: flex; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+
+  .back-btn {
+    align-self: flex-start; display: flex; align-items: center; gap: 6px;
+    background: none; border: 1px solid #fbcfe8; border-radius: 999px; padding: 7px 14px;
+    font-size: 13px; font-weight: 600; color: #9d174d; cursor: pointer;
+    -webkit-tap-highlight-color: transparent; transition: background 0.12s;
+  }
+  .back-btn:active { background: #fce7f3; }
+
+  .big-icon { font-size: 56px; text-align: center; }
+  .title { font-size: 20px; font-weight: 700; color: #9d174d; text-align: center; line-height: 1.3; }
+  .sub { font-size: 13px; color: #be185d; opacity: 0.75; text-align: center; line-height: 1.6; }
+
+  .pink-btn {
+    background: #f9a8d4; border: none; border-radius: 999px;
+    padding: 15px 36px; font-size: 16px; font-weight: 700; color: #4a1528;
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
+    transition: transform 0.12s, background 0.12s; width: 100%;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .pink-btn:active { transform: scale(0.96); background: #f472b6; }
+  .dark-btn {
+    background: #9d174d; border: none; border-radius: 999px;
+    padding: 15px 36px; font-size: 16px; font-weight: 700; color: #fff;
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
+    transition: transform 0.12s; width: 100%;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .dark-btn:active { transform: scale(0.96); background: #7f1d1d; }
+
+  .countdown-box { width: 100%; background: #fce7f3; border: 1px solid #fbcfe8; border-radius: 20px; padding: 22px 16px; text-align: center; }
+  .cd-label { font-size: 12px; font-weight: 700; color: #be185d; letter-spacing: 0.08em; margin-bottom: 14px; }
+  .cd-grid { display: flex; justify-content: center; gap: 8px; }
+  .cd-unit { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .cd-num { background: #9d174d; color: #fff; border-radius: 12px; width: 58px; height: 58px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; }
+  .cd-lbl { font-size: 10px; color: #be185d; font-weight: 700; letter-spacing: 0.05em; }
+  .cd-sep { font-size: 26px; font-weight: 700; color: #f9a8d4; align-self: center; margin-top: -10px; }
+
+  .photo-card { width: 100%; border-radius: 20px; overflow: hidden; border: 1px solid #fbcfe8; background: #fce7f3; }
+  .photo-wrap { width: 100%; aspect-ratio: 1/1; position: relative; overflow: hidden; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: filter 0.6s ease; filter: blur(24px) brightness(0.65); }
+  .photo-wrap.revealed img { filter: none; }
+  .blur-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; transition: opacity 0.4s; background: rgba(0,0,0,0.15); }
+  .photo-wrap.revealed .blur-overlay { opacity: 0; pointer-events: none; }
+  .blur-overlay .tap-emoji { font-size: 44px; }
+  .blur-overlay p { font-size: 15px; font-weight: 700; color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
+  .photo-footer { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; }
+  .photo-label { font-size: 13px; color: #be185d; font-weight: 600; }
+  .save-btn {
+    display: flex; align-items: center; gap: 5px; background: #f9a8d4;
+    border: none; border-radius: 999px; padding: 8px 16px;
+    font-size: 13px; font-weight: 700; color: #4a1528; cursor: pointer;
+    -webkit-tap-highlight-color: transparent; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .save-btn.show { opacity: 1; pointer-events: all; }
+  .save-btn:active { background: #f472b6; }
+
+  .dots { display: flex; gap: 8px; justify-content: center; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #fbcfe8; transition: background 0.2s, transform 0.2s; }
+  .dot.active { background: #ec4899; transform: scale(1.3); }
+
+  .website-box { width: 100%; background: #fce7f3; border: 1px solid #fbcfe8; border-radius: 20px; padding: 20px; text-align: center; }
+  .website-label { font-size: 11px; font-weight: 700; color: #be185d; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+  .website-url { font-size: 19px; font-weight: 700; color: #9d174d; margin-bottom: 14px; }
+  .copy-btn {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    background: #f9a8d4; border: none; border-radius: 999px;
+    padding: 11px 24px; font-size: 14px; font-weight: 700; color: #4a1528;
+    cursor: pointer; -webkit-tap-highlight-color: transparent; width: 100%; margin-bottom: 10px;
+  }
+  .copy-btn:active { background: #f472b6; }
+  .copy-btn.copied { background: #bbf7d0; color: #065f46; }
+  .open-site-btn {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    background: #9d174d; border: none; border-radius: 999px;
+    padding: 11px 24px; font-size: 14px; font-weight: 700; color: #fff;
+    cursor: pointer; -webkit-tap-highlight-color: transparent; width: 100%; text-decoration: none;
+  }
+  .open-site-btn:active { background: #7f1d1d; }
+
+  .tips-list { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+  .tip-card { background: #fff; border: 1px solid #fbcfe8; border-radius: 16px; padding: 14px 16px; display: flex; align-items: flex-start; gap: 12px; }
+  .tip-icon { width: 38px; height: 38px; border-radius: 10px; background: #fce7f3; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; }
+  .tip-content { flex: 1; }
+  .tip-title { font-size: 13px; font-weight: 700; color: #9d174d; margin-bottom: 3px; }
+  .tip-desc { font-size: 12px; color: #be185d; line-height: 1.5; opacity: 0.85; }
+
+  .wish-card { width: 100%; background: #fce7f3; border: 1px solid #fbcfe8; border-radius: 20px; padding: 18px; max-height: 55vh; overflow-y: auto; }
+  .wish-text { font-size: 14.5px; color: #4a1528; line-height: 1.85; white-space: pre-wrap; }
+
+  .pin-box { width: 100%; background: #fce7f3; border: 1px solid #fbcfe8; border-radius: 20px; padding: 22px 18px; text-align: center; }
+  .pin-title { font-size: 15px; font-weight: 700; color: #9d174d; margin-bottom: 4px; }
+  .pin-sub { font-size: 12px; color: #be185d; margin-bottom: 16px; opacity: 0.8; }
+  .pin-dots { display: flex; gap: 10px; justify-content: center; margin-bottom: 16px; }
+  .pin-dot { width: 14px; height: 14px; border-radius: 50%; background: #fbcfe8; border: 2px solid #f9a8d4; transition: background 0.2s; }
+  .pin-dot.filled { background: #ec4899; border-color: #ec4899; }
+  .pin-keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .pin-key { background: #fff; border: 1px solid #fbcfe8; border-radius: 14px; padding: 15px 0; font-size: 20px; font-weight: 700; color: #9d174d; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: background 0.1s; }
+  .pin-key:active { background: #f9a8d4; }
+  .pin-error { font-size: 12px; color: #dc2626; margin-top: 10px; min-height: 16px; }
+  .pin-shake { animation: shake 0.4s ease; }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-6px)} 40%,80%{transform:translateX(6px)} }
+
+  .secret-card { width: 100%; background: #fff; border: 1px solid #fbcfe8; border-radius: 20px; padding: 18px; max-height: 60vh; overflow-y: auto; }
+  .secret-text { font-size: 14px; color: #1a1a1a; line-height: 1.9; white-space: pre-wrap; }
+
+  .icon-circle { width: 64px; height: 64px; background: #fce7f3; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 32px; }
+
+  .lucide { display: inline-block; vertical-align: middle; }
+  .confetti-piece { position: fixed; pointer-events: none; opacity: 0; animation: cfall 2.5s ease-in forwards; border-radius: 2px; }
+  @keyframes cfall { 0%{transform:translateY(-20px) rotate(0deg);opacity:1} 100%{transform:translateY(110vh) rotate(600deg);opacity:0} }
+</style>
+</head>
+<body>
+
+<!-- S1: INTRO / COUNTDOWN -->
+<div id="s-intro" class="screen active">
+  <div class="big-icon"><i data-lucide="gift" style="width:56px;height:56px;stroke:#ec4899;stroke-width:1.5;"></i></div>
+  <div class="title">A surprise is waiting for you...</div>
+  <div class="sub">This gift unlocks on June 8th <i data-lucide="flower-2" style="width:15px;height:15px;stroke:#be185d;vertical-align:middle;"></i></div>
+  <div class="countdown-box">
+    <div class="cd-label">OPENS IN</div>
+    <div class="cd-grid">
+      <div class="cd-unit"><div class="cd-num" id="cd-d">00</div><div class="cd-lbl">DAYS</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">HRS</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><div class="cd-num" id="cd-m">00</div><div class="cd-lbl">MIN</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">SEC</div></div>
+    </div>
+  </div>
+  <div class="sub" id="cd-msg" style="display:none;color:#9d174d;font-size:15px;font-weight:700;opacity:1;"><i data-lucide="party-popper" style="width:16px;height:16px;stroke:#9d174d;vertical-align:middle;"></i> Today is the day! Open your gift!</div>
+  <button class="pink-btn" id="open-gift-btn" style="display:none;" onclick="go('s-wish')"><i data-lucide="gift" style="width:18px;height:18px;stroke:#4a1528;"></i> Open your gift</button>
+</div>
+
+<!-- S2: BIRTHDAY WISH -->
+<div id="s-wish" class="screen">
+  <button class="back-btn" onclick="go('s-intro')"><i data-lucide="arrow-left" style="width:14px;height:14px;stroke:#9d174d;"></i> Back</button>
+  <div class="title">Happy Birthday, Ammu! <i data-lucide="cake" style="width:20px;height:20px;stroke:#9d174d;vertical-align:middle;"></i></div>
+  <div class="wish-card">
+    <div class="wish-text">Hey Mu, 🎀
+
+This is Martin. Happy 24th Birthday! 🎉🎂
+
+Always stay happy, and may all your dreams come true ✨ You're such a talented beauty artist and freelancer, and I hope everything is going well for you. I truly believe your career will grow to great heights, and one day you'll become a top artist, Mu. 💫
+
+Take care of Ammama and Amma ❤️ You're the one holding your family together and taking care of everyone with so much strength. Keep going, your hard work and dedication will definitely pay off. 🌷
+
+I've created something special for you 🎁✨ Check it out when you get a chance. I hope you like it. 😊
+
+Wishing you lots of happiness, success, good health, and peace in life 🌹 Take care always!
+
+Martin 🤍</div>
+  </div>
+  <button class="pink-btn" onclick="go('s-photo1')"><i data-lucide="camera" style="width:18px;height:18px;stroke:#4a1528;"></i> See your photos</button>
+</div>
+
+<!-- S3: PHOTO 1 -->
+<div id="s-photo1" class="screen">
+  <button class="back-btn" onclick="go('s-wish')"><i data-lucide="arrow-left" style="width:14px;height:14px;stroke:#9d174d;"></i> Back</button>
+  <div class="title">Photo 1 of 2 <i data-lucide="flower-2" style="width:18px;height:18px;stroke:#9d174d;vertical-align:middle;"></i></div>
+  <div class="dots"><div class="dot active"></div><div class="dot"></div><div class="dot" style="background:#f9a8d4;width:6px;height:6px;opacity:0.5;"></div></div>
+  <div class="photo-card">
+    <div class="photo-wrap" id="pw1" onclick="reveal('pw1','sb1')">
+      <img src="image1.png" alt="Photo 1">
+      <div class="blur-overlay">
+        <div class="tap-emoji"><i data-lucide="touch" style="width:44px;height:44px;stroke:#fff;stroke-width:1.5;"></i></div>
+        <p>Tap to reveal</p>
+      </div>
+    </div>
+    <div class="photo-footer">
+      <span class="photo-label">Your photo</span>
+      <button class="save-btn" id="sb1" onclick="savePhoto('image1.png')"><i data-lucide="download" style="width:14px;height:14px;stroke:#4a1528;"></i> Save</button>
+    </div>
+  </div>
+  <button class="pink-btn" onclick="go('s-photo2')">Next photo <i data-lucide="arrow-right" style="width:18px;height:18px;stroke:#4a1528;"></i></button>
+</div>
+
+<!-- S4: PHOTO 2 -->
+<div id="s-photo2" class="screen">
+  <button class="back-btn" onclick="go('s-photo1')"><i data-lucide="arrow-left" style="width:14px;height:14px;stroke:#9d174d;"></i> Back</button>
+  <div class="title">Photo 2 of 2 <i data-lucide="heart" style="width:18px;height:18px;stroke:#9d174d;fill:#f9a8d4;vertical-align:middle;"></i></div>
+  <div class="dots"><div class="dot"></div><div class="dot active"></div><div class="dot" style="background:#f9a8d4;width:6px;height:6px;opacity:0.5;"></div></div>
+  <div class="photo-card">
+    <div class="photo-wrap" id="pw2" onclick="reveal('pw2','sb2')">
+      <img src="image2.png" alt="Photo 2">
+      <div class="blur-overlay">
+        <div class="tap-emoji"><i data-lucide="touch" style="width:44px;height:44px;stroke:#fff;stroke-width:1.5;"></i></div>
+        <p>Tap to reveal</p>
+      </div>
+    </div>
+    <div class="photo-footer">
+      <span class="photo-label">Your photo</span>
+      <button class="save-btn" id="sb2" onclick="savePhoto('image2.png')"><i data-lucide="download" style="width:14px;height:14px;stroke:#4a1528;"></i> Save</button>
+    </div>
+  </div>
+  <button class="pink-btn" onclick="go('s-website')"><i data-lucide="sparkles" style="width:18px;height:18px;stroke:#4a1528;"></i> One more surprise...</button>
+</div>
+
+<!-- S5: WEBSITE -->
+<div id="s-website" class="screen">
+  <button class="back-btn" onclick="go('s-photo2')"><i data-lucide="arrow-left" style="width:14px;height:14px;stroke:#9d174d;"></i> Back</button>
+  <img src="logo.png" alt="Glam by Harini" style="width:90px;height:90px;object-fit:contain;">
+  <div class="title">You have a website! <i data-lucide="globe" style="width:20px;height:20px;stroke:#9d174d;vertical-align:middle;"></i></div>
+  <div class="sub">Your brand now has a home on the internet <i data-lucide="lipstick" style="width:14px;height:14px;stroke:#be185d;vertical-align:middle;"></i></div>
+  <div class="website-box">
+    <div class="website-label"><i data-lucide="link" style="width:12px;height:12px;stroke:#be185d;vertical-align:middle;"></i> Your website</div>
+    <div class="website-url">glambyharini.in</div>
+    <button class="copy-btn" id="copy-btn" onclick="copyUrl()"><i data-lucide="clipboard" style="width:15px;height:15px;stroke:#4a1528;"></i> Copy link</button>
+    <a class="open-site-btn" href="https://glambyharini.in" target="_blank"><i data-lucide="external-link" style="width:15px;height:15px;stroke:#fff;"></i> Open my website</a>
+  </div>
+  <div class="tips-list">
+    <div class="tip-card">
+      <div class="tip-icon"><i data-lucide="instagram" style="width:20px;height:20px;stroke:#ec4899;"></i></div>
+      <div class="tip-content">
+        <div class="tip-title">Share on Instagram</div>
+        <div class="tip-desc">Add glambyharini.in to your Instagram bio — clients who visit your profile can find and contact you directly!</div>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon"><i data-lucide="search" style="width:20px;height:20px;stroke:#ec4899;"></i></div>
+      <div class="tip-content">
+        <div class="tip-title">You're on Google now!</div>
+        <div class="tip-desc">I've listed you on Google & Chrome. When people search for beauty artists nearby, your name will appear — you'll get more orders! 🌟</div>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon"><i data-lucide="pencil" style="width:20px;height:20px;stroke:#ec4899;"></i></div>
+      <div class="tip-content">
+        <div class="tip-title">Need to update your prices?</div>
+        <div class="tip-desc">Changed your service or price list? Just let me know and I'll update your website right away.</div>
+      </div>
+    </div>
+  </div>
+  <button class="dark-btn" onclick="go('s-pin')"><i data-lucide="lock" style="width:18px;height:18px;stroke:#fff;"></i> One last secret...</button>
+</div>
+
+<!-- S6: PIN -->
+<div id="s-pin" class="screen">
+  <button class="back-btn" onclick="go('s-website')"><i data-lucide="arrow-left" style="width:14px;height:14px;stroke:#9d174d;"></i> Back</button>
+  <div class="icon-circle"><i data-lucide="lock" style="width:32px;height:32px;stroke:#ec4899;stroke-width:1.5;"></i></div>
+  <div class="title">Secret message</div>
+  <div class="sub">Enter the PIN to unlock a personal message just for you</div>
+  <div class="pin-box">
+    <div class="pin-title">Enter PIN</div>
+    <div class="pin-sub">6 digits</div>
+    <div class="pin-dots" id="pin-dots">
+      <div class="pin-dot" id="pd0"></div>
+      <div class="pin-dot" id="pd1"></div>
+      <div class="pin-dot" id="pd2"></div>
+      <div class="pin-dot" id="pd3"></div>
+      <div class="pin-dot" id="pd4"></div>
+      <div class="pin-dot" id="pd5"></div>
+    </div>
+    <div class="pin-keypad">
+      <button class="pin-key" onclick="pinKey('1')">1</button>
+      <button class="pin-key" onclick="pinKey('2')">2</button>
+      <button class="pin-key" onclick="pinKey('3')">3</button>
+      <button class="pin-key" onclick="pinKey('4')">4</button>
+      <button class="pin-key" onclick="pinKey('5')">5</button>
+      <button class="pin-key" onclick="pinKey('6')">6</button>
+      <button class="pin-key" onclick="pinKey('7')">7</button>
+      <button class="pin-key" onclick="pinKey('8')">8</button>
+      <button class="pin-key" onclick="pinKey('9')">9</button>
+      <button class="pin-key" onclick="pinKey('0')" style="grid-column:2;">0</button>
+      <button class="pin-key" onclick="pinDel()"><i data-lucide="delete" style="width:20px;height:20px;stroke:#9d174d;"></i></button>
+    </div>
+    <div class="pin-error" id="pin-error"></div>
+  </div>
+</div>
+
+<!-- S7: SECRET MESSAGE -->
+<div id="s-secret" class="screen">
+  <button class="back-btn" onclick="go('s-pin')"><i data-lucide="arrow-left" style="width:14px;height:14px;stroke:#9d174d;"></i> Back</button>
+  <div class="icon-circle"><i data-lucide="heart" style="width:32px;height:32px;stroke:#ec4899;fill:#f9a8d4;stroke-width:1.5;"></i></div>
+  <div class="title">From Martin, with love <i data-lucide="heart" style="width:18px;height:18px;stroke:#9d174d;fill:#f9a8d4;vertical-align:middle;"></i></div>
+  <div class="secret-card">
+    <div class="secret-text">Dear Mu, 🌸
+And it's been 3 years… talking to you, seeing you, somewhere along the way, you became someone really special to me. I don't know if you ever felt the same way, but I truly loved you with all my heart. ❤️
+
+For the longest time, I kept holding onto the hope that maybe one day things would turn out differently between us. I trusted your words, your promises, and the memories we shared. Maybe that's why I stayed attached to you for so long. ✨
+
+But with time, I realized you had already moved on, and slowly, I had to accept that too. 🌙
+
+I won't lie, it hurt me deeply, because I never expected our story to end silently like this. But even after everything, I've never wished anything bad for you. I still genuinely want you to be happy, safe, successful, and at peace in life. 🌷
+
+If you ever face any problem, I'll always be there to help you however I can. 🤍
+
+Right now, I don't see another love chapter in my life. What I felt for you was real, and I don't think anyone could ever replace that. 💫
+
+I'm not the kind of person who can leave someone and go find another love easily. Once I gave my heart to you, it was real for me. I promised myself that you would be my first and last love, Mu. ❤️
+
+But please don't think I'm writing this to be toxic, to blame you, or to trouble you. I'm not that kind of person. I respect your choices, and I respect the path you've chosen in life. I won't forget you, but I will accept that you've moved on. 🌼
+
+I don't know if you'll read this message fully or not, but I just wanted to finally express what I've carried in my heart for all these years. No matter what happens, a part of me will always care about you. 🕊️
+
+Be happy, Ammu. Stay blessed, stay safe, and may life give you everything you deserve. 🌹✨
+
+I love you so much, and I miss you so much. ❤️🥺
+
+Take care always, Mu. 🌸
+Martin 🤍</div>
+  </div>
+</div>
+
+<script>
+const UNLOCK_DATE = new Date('2026-06-08T06:06:00');
+const PIN = '080123';
+let pinEntry = '';
+
+function checkDate() {
+  const now = new Date();
+  const diff = UNLOCK_DATE - now;
+  if (diff <= 0) {
+    document.getElementById('cd-msg').style.display = 'block';
+    document.getElementById('open-gift-btn').style.display = 'flex';
+    ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '00');
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+checkDate();
+setInterval(checkDate, 1000);
+
+function go(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if (id === 's-website' || id === 's-secret') confetti();
+  window.scrollTo(0, 0);
+}
+
+function reveal(wrapId, btnId) {
+  const wrap = document.getElementById(wrapId);
+  if (wrap.classList.contains('revealed')) return;
+  wrap.classList.add('revealed');
+  document.getElementById(btnId).classList.add('show');
+  confetti();
+}
+
+function savePhoto(filename) {
+  const a = document.createElement('a');
+  a.href = filename; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+
+function copyUrl() {
+  const url = 'https://glambyharini.in';
+  const btn = document.getElementById('copy-btn');
+  (navigator.clipboard ? navigator.clipboard.writeText(url) : new Promise(res => {
+    const t = document.createElement('textarea'); t.value = url;
+    document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); res();
+  })).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = '<i data-lucide="check" style="width:15px;height:15px;stroke:#065f46;"></i> Copied!';
+    lucide.createIcons();
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<i data-lucide="clipboard" style="width:15px;height:15px;stroke:#4a1528;"></i> Copy link';
+      lucide.createIcons();
+    }, 2500);
+  });
+}
+
+function pinKey(k) {
+  if (pinEntry.length >= 6) return;
+  pinEntry += k;
+  updatePinDots();
+  if (pinEntry.length === 6) setTimeout(checkPin, 150);
+}
+
+function pinDel() {
+  pinEntry = pinEntry.slice(0, -1);
+  updatePinDots();
+  document.getElementById('pin-error').textContent = '';
+}
+
+function updatePinDots() {
+  for (let i = 0; i < 6; i++) {
+    document.getElementById('pd' + i).classList.toggle('filled', i < pinEntry.length);
+  }
+}
+
+function checkPin() {
+  if (pinEntry === PIN) {
+    go('s-secret'); pinEntry = ''; updatePinDots();
+  } else {
+    document.getElementById('pin-error').textContent = 'Wrong PIN. Try again 💕';
+    const box = document.getElementById('pin-dots');
+    box.classList.add('pin-shake');
+    setTimeout(() => box.classList.remove('pin-shake'), 400);
+    pinEntry = ''; updatePinDots();
+  }
+}
+
+function confetti() {
+  const colors = ['#f9a8d4','#f472b6','#fbbf24','#a78bfa','#34d399','#fb7185','#60a5fa'];
+  for (let i = 0; i < 30; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti-piece';
+    const size = 6 + Math.random() * 8;
+    el.style.cssText = `background:${colors[Math.floor(Math.random()*colors.length)]};left:${Math.random()*100}%;top:-10px;animation-delay:${Math.random()*0.9}s;animation-duration:${1.8+Math.random()*1.5}s;width:${size}px;height:${size}px;border-radius:${Math.random()>0.5?'50%':'2px'};`;
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 3500);
+  }
+}
+
+// Init Lucide icons
+document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
+</script>
+<script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+</body>
+</html>
