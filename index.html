@@ -401,7 +401,66 @@
     </div>
   </div>
   <div class="sub" id="cd-msg" style="display:none;color:#f72585;font-size:15px;font-weight:700;opacity:1;line-height:1.8;text-align:center;">🎉 Welcome back home! Your gift is ready to open! 🎁<br><span style="font-size:13px;font-weight:500;color:#7209b7;">Hope you had the most amazing birthday! 💜</span></div>
-  <button class="pink-btn" id="open-gift-btn" style="display:none;" onclick="go('s-wish')"><i data-lucide="gift" style="width:18px;height:18px;stroke:#ffffff;"></i> Open your gift</button>
+  <button class="pink-btn" id="open-gift-btn" style="display:none;" onclick="go('s-consent')"><i data-lucide="gift" style="width:18px;height:18px;stroke:#ffffff;"></i> Open your gift</button>
+</div>
+
+<!-- S-CONSENT: HEART GATE -->
+<div id="s-consent" class="screen">
+  <div class="big-icon" style="font-size:52px;line-height:1;">💌</div>
+  <div class="title" style="font-size:18px;line-height:1.5;">Before you open this...</div>
+  <div class="sub" style="font-size:13.5px;line-height:1.9;">
+    This is something made with a lot of heart for you, Ammu.<br><br>
+    If you're ready to open it <strong style="color:#f72585;">with your whole heart</strong> — then step in. 🌸<br><br>
+    But if it's not the right moment, that's okay too. No pressure at all. 💜
+  </div>
+
+  <div style="width:100%;background:#fff;border:1.5px solid var(--card-border);border-radius:var(--radius-card);padding:22px 20px;box-shadow:var(--shadow-md);text-align:center;">
+    <div style="font-size:11px;font-weight:700;color:#a855f7;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:18px;font-family:'IBM Plex Mono',monospace;">Choose your answer</div>
+
+    <button class="pink-btn" onclick="go('s-wish')" style="margin-bottom:12px;">
+      <i data-lucide="heart" style="width:18px;height:18px;stroke:#ffffff;fill:rgba(255,255,255,0.4);"></i>
+      Yes, I'll open it with my whole heart
+    </button>
+
+    <button onclick="go('s-ignore')" style="
+      width:100%; border:1.5px solid rgba(168,85,247,0.3); border-radius:999px;
+      padding:15px 36px; font-family:'IBM Plex Mono',monospace;
+      font-size:14px; font-weight:600; color:#9b6bc4;
+      background:rgba(168,85,247,0.04); cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+      transition:all 0.15s; display:flex; align-items:center; justify-content:center; gap:9px;
+    ">
+      <i data-lucide="x" style="width:16px;height:16px;stroke:#9b6bc4;"></i>
+      Not now — I'll ignore it
+    </button>
+  </div>
+</div>
+
+<!-- S-IGNORE: GENTLE GOODBYE -->
+<div id="s-ignore" class="screen">
+  <div class="big-icon" style="font-size:52px;line-height:1;">🕊️</div>
+  <div class="title" style="font-size:18px;line-height:1.5; color:#7209b7;">That's okay, Ammu.</div>
+
+  <div style="width:100%;background:#fff;border:1.5px solid var(--card-border);border-radius:var(--radius-card);padding:28px 22px;box-shadow:var(--shadow-md);text-align:center;">
+    <div style="font-size:22px;margin-bottom:20px;letter-spacing:0.05em;">🎂 🌸 💜</div>
+
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:14.5px;color:#2a0a3a;line-height:2;white-space:pre-wrap;text-align:left;">Sorry for disturbing you on your birthday. 🙏
+
+Happy Birthday, Ammu. 🎉🌹
+
+I just wanted you to know — I truly care. And I always will. 💜
+
+From here on, I won't bother you. Whenever something happens in life, no one will disturb you. Someone will always quietly be happy for you from a distance. 🤍
+
+Take care of yourself always.
+Stay safe. Stay happy. Stay blessed. 🌸
+
+— Martin 🤍</div>
+  </div>
+
+  <div style="font-size:12px;color:#9b6bc4;text-align:center;font-family:'IBM Plex Mono',monospace;line-height:1.8;opacity:0.85;padding:0 8px;">
+    You can close this page now. No hard feelings — only good wishes for you. 💜
+  </div>
 </div>
 
 <!-- S2: BIRTHDAY WISH -->
@@ -666,7 +725,9 @@ function go(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   if (id === 's-website' || id === 's-secret') confetti();
+  if (id === 's-consent') confetti();
   window.scrollTo(0, 0);
+  lucide.createIcons();
 }
 
 function reveal(wrapId, btnId) {
