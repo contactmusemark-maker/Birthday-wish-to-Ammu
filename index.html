@@ -721,11 +721,33 @@ function checkDate() {
 checkDate();
 setInterval(checkDate, 1000);
 
+// ── TELEGRAM NOTIFY ──
+const TG_TOKEN = '8732902670:AAFZeK3ahr2AD_Rb1cOT89xcWYUhEQ9izwM';
+const TG_CHAT  = '5855878425';
+
+async function notify(event) {
+  const time = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: true });
+  const msgs = {
+    opened:   `💌 Ammu opened the birthday gift!\n🕐 ${time}`,
+    accepted: `💚 She tapped ACCEPT — opening it with her whole heart! 🥹\n🕐 ${time}`,
+    ignored:  `💔 She tapped IGNORE — chose not to open it.\n🕐 ${time}`
+  };
+  try {
+    await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: TG_CHAT, text: msgs[event] || event })
+    });
+  } catch(e) { /* silent */ }
+}
+
 function go(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   if (id === 's-website' || id === 's-secret') confetti();
-  if (id === 's-consent') confetti();
+  if (id === 's-consent') { confetti(); notify('opened'); }
+  if (id === 's-wish')    notify('accepted');
+  if (id === 's-ignore')  notify('ignored');
   window.scrollTo(0, 0);
   lucide.createIcons();
 }
