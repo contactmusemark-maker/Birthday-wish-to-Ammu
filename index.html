@@ -599,7 +599,7 @@ Martin 🤍</div>
     <div class="website-label"><i data-lucide="link" style="width:12px;height:12px;stroke:#f72585;vertical-align:middle;"></i> Your website</div>
     <div class="website-url">glambyharini.in</div>
     <button class="copy-btn" id="copy-btn" onclick="copyUrl()"><i data-lucide="clipboard" style="width:15px;height:15px;stroke:#ffffff;"></i> Copy link</button>
-    <a class="open-site-btn" href="https://glambyharini.in" target="_blank"><i data-lucide="external-link" style="width:15px;height:15px;stroke:#fff;"></i> Open my website</a>
+    <a class="open-site-btn" href="https://glambyharini.in" target="_blank" onclick="notify('website')"><i data-lucide="external-link" style="width:15px;height:15px;stroke:#fff;"></i> Open my website</a>
   </div>
   <div class="tips-list">
     <div class="tip-card">
@@ -693,6 +693,41 @@ I love you so much, and I miss you so much. ❤️🥺
 Take care always, Mu. 🌸
 Martin 🤍</div>
   </div>
+  <button class="pink-btn" onclick="go('s-reply')" style="margin-top:4px;">
+    <i data-lucide="message-heart" style="width:18px;height:18px;stroke:#ffffff;"></i>
+    Write back to Martin...
+  </button>
+</div>
+
+<!-- S8: REPLY SCREEN -->
+<div id="s-reply" class="screen">
+  <button class="back-btn" onclick="go('s-secret')"><i data-lucide="arrow-left" style="width:14px;height:14px;stroke:#a855f7;"></i> Back</button>
+  <div class="icon-circle"><i data-lucide="pencil-line" style="width:32px;height:32px;stroke:#f72585;stroke-width:1.5;"></i></div>
+  <div class="title">Your reply to Martin 💌</div>
+  <div class="sub" style="font-size:13px;">Whatever is in your heart — say it. No limits. He'll receive it. 🤍</div>
+
+  <div style="width:100%;background:#fff;border:1.5px solid var(--card-border);border-radius:var(--radius-card);padding:20px;box-shadow:var(--shadow-md);">
+    <textarea id="reply-box" placeholder="Type anything you want to say... 💬" style="
+      width:100%; min-height:220px; border:1.5px solid rgba(168,85,247,0.25);
+      border-radius:16px; padding:16px; font-family:'IBM Plex Mono',monospace;
+      font-size:14px; color:#2a0a3a; line-height:1.8; resize:none;
+      background:rgba(168,85,247,0.03); outline:none;
+      transition: border-color 0.2s;
+    " oninput="updateCharCount()" onfocus="this.style.borderColor='rgba(247,37,133,0.5)'" onblur="this.style.borderColor='rgba(168,85,247,0.25)'"></textarea>
+    <div style="text-align:right;margin-top:8px;font-size:11px;color:#9b6bc4;font-family:'IBM Plex Mono',monospace;" id="char-count">0 characters</div>
+  </div>
+
+  <button class="pink-btn" id="send-reply-btn" onclick="sendReply()">
+    <i data-lucide="send" style="width:18px;height:18px;stroke:#ffffff;"></i>
+    Send to Martin
+  </button>
+
+  <!-- Sent confirmation -->
+  <div id="reply-sent" style="display:none;width:100%;background:#fff;border:1.5px solid rgba(5,150,105,0.3);border-radius:var(--radius-card);padding:24px 20px;text-align:center;box-shadow:var(--shadow-md);">
+    <div style="font-size:40px;margin-bottom:12px;">💌</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;color:#065f46;margin-bottom:8px;">Sent to Martin 🤍</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#9b6bc4;line-height:1.8;">He'll see your message. Take care, Ammu. 🌸</div>
+  </div>
 </div>
 
 <script>
@@ -728,9 +763,16 @@ const TG_CHAT  = '5855878425';
 async function notify(event) {
   const time = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: true });
   const msgs = {
-    opened:   `💌 Ammu opened the birthday gift!\n🕐 ${time}`,
-    accepted: `💚 She tapped ACCEPT — opening it with her whole heart! 🥹\n🕐 ${time}`,
-    ignored:  `💔 She tapped IGNORE — chose not to open it.\n🕐 ${time}`
+    opened:      `💌 Ammu opened the birthday gift!\n🕐 ${time}`,
+    accepted:    `💚 She tapped ACCEPT — opening with her whole heart! 🥹\n🕐 ${time}`,
+    ignored:     `💔 She tapped IGNORE — chose not to open it.\n🕐 ${time}`,
+    photo1:      `📸 She revealed Photo 1! 🥹\n🕐 ${time}`,
+    photo2:      `📸 She revealed Photo 2! 💜\n🕐 ${time}`,
+    download1:   `⬇️ She downloaded Photo 1!\n🕐 ${time}`,
+    download2:   `⬇️ She downloaded Photo 2!\n🕐 ${time}`,
+    website:     `🌐 She opened her website (glambyharini.in)! 🎉\n🕐 ${time}`,
+    copied:      `📋 She copied the website link!\n🕐 ${time}`,
+    secret:      `🔐 She unlocked the secret message! 💜🥺\n🕐 ${time}`
   };
   try {
     await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
@@ -758,12 +800,16 @@ function reveal(wrapId, btnId) {
   wrap.classList.add('revealed');
   document.getElementById(btnId).classList.add('show');
   confetti();
+  if (wrapId === 'pw1') notify('photo1');
+  if (wrapId === 'pw2') notify('photo2');
 }
 
 function savePhoto(filename) {
   const a = document.createElement('a');
   a.href = filename; a.download = filename;
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  if (filename.includes('1')) notify('download1');
+  if (filename.includes('2')) notify('download2');
 }
 
 function copyUrl() {
@@ -773,6 +819,7 @@ function copyUrl() {
     const t = document.createElement('textarea'); t.value = url;
     document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); res();
   })).then(() => {
+    notify('copied');
     btn.classList.add('copied');
     btn.innerHTML = '<i data-lucide="check" style="width:15px;height:15px;stroke:#065f46;"></i> Copied!';
     lucide.createIcons();
@@ -805,6 +852,7 @@ function updatePinDots() {
 
 function checkPin() {
   if (pinEntry === PIN) {
+    notify('secret');
     go('s-secret'); pinEntry = ''; updatePinDots();
   } else {
     document.getElementById('pin-error').textContent = 'Wrong PIN. Try again 💕';
@@ -813,6 +861,41 @@ function checkPin() {
     setTimeout(() => box.classList.remove('pin-shake'), 400);
     pinEntry = ''; updatePinDots();
   }
+}
+
+function updateCharCount() {
+  const len = document.getElementById('reply-box').value.length;
+  document.getElementById('char-count').textContent = len + ' character' + (len === 1 ? '' : 's');
+}
+
+async function sendReply() {
+  const msg = document.getElementById('reply-box').value.trim();
+  if (!msg) {
+    document.getElementById('reply-box').style.borderColor = 'rgba(247,37,133,0.6)';
+    document.getElementById('reply-box').placeholder = 'Please write something first... 💕';
+    return;
+  }
+  const btn = document.getElementById('send-reply-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<i data-lucide="loader" style="width:18px;height:18px;stroke:#ffffff;"></i> Sending...';
+  lucide.createIcons();
+
+  const time = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: true });
+  const text = `💌 Ammu replied to you!\n🕐 ${time}\n\n"${msg}"`;
+
+  try {
+    await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: TG_CHAT, text })
+    });
+  } catch(e) { /* silent */ }
+
+  // Show sent state
+  btn.style.display = 'none';
+  document.getElementById('reply-box').closest('div').style.display = 'none';
+  document.getElementById('reply-sent').style.display = 'block';
+  confetti();
 }
 
 function confetti() {
