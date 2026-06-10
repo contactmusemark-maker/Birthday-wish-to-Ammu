@@ -6,14 +6,14 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="theme-color" content="#F2F2F7">
+<meta name="theme-color" content="#F5F1E6">
 <title>Happy Birthday Ammu 🎀</title>
 
 <!-- Open Graph -->
 <meta property="og:title" content="Happy Birthday Ammu 🎀">
 <meta property="og:description" content="A special birthday surprise just for you 🌸">
 <meta property="og:url" content="https://celebrateammu.inkaastudio.com/">
-<meta property="og:image" content="https://res.cloudinary.com/dbrna8vsn/image/upload/f_auto,q_auto/og-image_xrlqgg">
+<meta property="og:image" content="https://res.cloudinary.com/ddpyvx62u/image/upload/v1781129965/ChatGPT_Image_Jun_11_2026_03_46_44_AM_ztmvxh.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Happy Birthday Ammu 🎀">
 <meta name="twitter:description" content="A special birthday surprise just for you 🌸">
-<meta name="twitter:image" content="https://res.cloudinary.com/dbrna8vsn/image/upload/f_auto,q_auto/og-image_xrlqgg">
+<meta name="twitter:image" content="https://res.cloudinary.com/ddpyvx62u/image/upload/v1781129965/ChatGPT_Image_Jun_11_2026_03_46_44_AM_ztmvxh.png">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="https://celebrateammu.inkaastudio.com/favicon.png">
@@ -31,30 +31,42 @@
 <link rel="shortcut icon" href="https://celebrateammu.inkaastudio.com/favicon.png">
 <link rel="apple-touch-icon" href="https://celebrateammu.inkaastudio.com/favicon.png">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
   :root {
-    /* iOS 17 / Material You harmonised system colors */
-    --bg:             #F2F2F7;
+    /* ── "Boarding Pass" — cream paper, terracotta & ink, IBM Plex ── */
+    --bg:             #F5F1E6;
+    --bg-deep:        #EAE2D0;
     --card:           #FFFFFF;
-    --pink:           #FF2D55;
-    --pink-light:     #FF6B8A;
-    --purple:         #AF52DE;
-    --blue:           #007AFF;
-    --green:          #34C759;
-    --red:            #FF3B30;
-    --text:           #000000;
-    --text-secondary: rgba(60,60,67,0.6);
-    --text-caption:   rgba(60,60,67,0.45);
-    --separator:      rgba(60,60,67,0.18);
-    --fill-tertiary:  rgba(118,118,128,0.12);
-    --fill-secondary: rgba(118,118,128,0.16);
-    --fill-opaque:    rgba(120,120,128,0.18);
-    --fill-active:    rgba(120,120,128,0.35);
-    --shadow:         0 2px 8px rgba(0,0,0,0.08);
-    --shadow-lg:      0 4px 16px rgba(0,0,0,0.10);
-    --radius-card:    16px;
-    --radius-btn:     14px;
-    --radius-input:   12px;
+    --pink:           #C1622D;       /* terracotta */
+    --pink-light:     #E0935C;       /* amber */
+    --gold:           #2D5C4A;       /* deep teal/forest */
+    --gold-light:     #CFE0D8;
+    --purple:         #5B7C99;
+    --blue:           #4C7A99;
+    --green:          #2D5C4A;
+    --red:            #B23A2E;
+    --text:           #1F1B16;
+    --text-secondary: rgba(31,27,22,0.58);
+    --text-caption:   rgba(31,27,22,0.42);
+    --separator:      rgba(31,27,22,0.12);
+    --fill-tertiary:  rgba(193,98,45,0.07);
+    --fill-secondary: rgba(193,98,45,0.12);
+    --fill-opaque:    rgba(31,27,22,0.10);
+    --fill-active:    rgba(31,27,22,0.18);
+    --shadow:         0 2px 14px rgba(31,27,22,0.06);
+    --shadow-lg:      0 10px 32px rgba(31,27,22,0.12);
+    --radius-card:    14px;
+    --radius-btn:     10px;
+    --radius-input:   10px;
+
+    /* Type families */
+    --font-display: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+    --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont,
+                 'Helvetica Neue', Roboto, 'Segoe UI', Arial, sans-serif;
 
     /* Safe area insets (falls back to 0 on non-notch devices) */
     --sat: env(safe-area-inset-top, 0px);
@@ -80,9 +92,10 @@
 
   body {
     /* Cross-platform system font: SF Pro on iOS, Roboto on Android, Segoe on Windows */
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
-                 'Helvetica Neue', Roboto, 'Segoe UI', Arial, sans-serif;
-    background: var(--bg);
+    font-family: var(--font-body);
+    background-color: var(--bg);
+    background-image: radial-gradient(rgba(31,27,22,0.06) 1px, transparent 1px);
+    background-size: 18px 18px;
     min-height: 100vh;
     min-height: 100dvh;
     display: flex;
@@ -158,20 +171,22 @@
   /* ── TYPOGRAPHY ── */
   .large-title {
     /* clamp: min 28px on tiny screens, max 34px on normal phone */
-    font-size: clamp(28px, 8vw, 34px);
-    font-weight: 700;
+    font-family: var(--font-display);
+    font-size: clamp(26px, 7.5vw, 32px);
+    font-weight: 600;
     letter-spacing: -0.5px;
     color: var(--text);
-    line-height: 1.15;
+    line-height: 1.25;
     text-align: center;
   }
   .title {
-    font-size: clamp(19px, 5.5vw, 22px);
-    font-weight: 700;
+    font-family: var(--font-display);
+    font-size: clamp(18px, 5.2vw, 21px);
+    font-weight: 600;
     letter-spacing: -0.3px;
     color: var(--text);
     text-align: center;
-    line-height: 1.3;
+    line-height: 1.35;
   }
   .body-text {
     font-size: 17px;
@@ -196,6 +211,12 @@
     letter-spacing: -0.1px;
   }
 
+  /* ── PREMIUM SURFACE FRAMING ── */
+  .card, .card-no-pad, .countdown-card, .inset-list, .prose-card, .photo-card,
+  .profile-bio, .profile-link-btn, .profile-stat-row, .cake-wrapper, .reply-textarea {
+    border: 1.5px dashed rgba(45,92,74,0.28);
+  }
+
   /* ── CARDS ── */
   .card {
     width: 100%;
@@ -218,24 +239,26 @@
     min-height: 50px; /* min not fixed — lets text wrap on tiny screens */
     height: 50px;
     border-radius: var(--radius-btn);
-    background: linear-gradient(135deg, var(--pink) 0%, var(--pink-light) 100%);
+    background: var(--text);
+    box-shadow: 0 6px 20px rgba(31,27,22,0.18);
     border: none;
-    color: #fff;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Roboto, sans-serif;
-    font-size: 17px;
+    color: var(--bg);
+    font-family: var(--font-display);
+    font-size: 14px;
     font-weight: 600;
-    letter-spacing: -0.2px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    transition: opacity 120ms, transform 120ms;
+    transition: opacity 120ms, transform 120ms, box-shadow 120ms;
     /* Prevent double-tap zoom on Android */
     touch-action: manipulation;
   }
-  .btn-primary:active { opacity: 0.7; transform: scale(0.98); }
+  .btn-primary:active { opacity: 0.85; transform: scale(0.98); box-shadow: 0 3px 10px rgba(31,27,22,0.14); }
 
   /* ── SECONDARY BUTTON ── */
   .btn-secondary {
@@ -267,7 +290,7 @@
     height: 50px;
     min-height: 50px;
     border-radius: var(--radius-btn);
-    background: rgba(255,59,48,0.10);
+    background: rgba(178,58,46,0.10);
     border: none;
     color: var(--red);
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Roboto, sans-serif;
@@ -287,10 +310,11 @@
 
   /* ── ICON CIRCLE ── */
   .icon-wrap {
-    width: 72px;
-    height: 72px;
-    border-radius: 22px;
+    width: 76px;
+    height: 76px;
+    border-radius: 18px;
     background: var(--fill-tertiary);
+    border: 1.5px dashed rgba(45,92,74,0.32);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -308,39 +332,46 @@
     display: flex;
     justify-content: center;
     gap: 0;
-    padding: 20px;
+    padding: 22px 20px;
   }
-  .cd-unit { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; }
+  .cd-unit { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; }
   .cd-num {
+    font-family: var(--font-display);
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--pink);
     letter-spacing: -1px;
     line-height: 1;
+    font-variant-numeric: tabular-nums;
   }
   .cd-lbl {
-    font-size: 11px;
-    font-weight: 400;
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 500;
     color: var(--text-caption);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
   .cd-sep {
-    font-size: 28px;
-    font-weight: 300;
-    color: var(--text-caption);
-    align-self: flex-start;
-    margin-top: 2px;
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--gold);
+    align-self: center;
+    margin-top: -14px;
     padding: 0 2px;
   }
   .countdown-header {
-    padding: 16px 20px 0;
-    border-bottom: 1px solid var(--separator);
+    padding: 18px 20px 0;
+    border-bottom: 1.5px dashed var(--separator);
     margin-bottom: 0;
-    font-size: 13px;
+    font-family: var(--font-display);
+    font-size: 11px;
     font-weight: 600;
     color: var(--text-secondary);
-    letter-spacing: -0.1px;
-    padding-bottom: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding-bottom: 14px;
   }
 
   /* ── INSET LIST (iOS grouped rows) ── */
@@ -428,10 +459,11 @@
 
   /* ── WEBSITE BOX ── */
   .website-url {
-    font-size: 22px;
-    font-weight: 700;
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 600;
     color: var(--text);
-    letter-spacing: -0.5px;
+    letter-spacing: 0.04em;
     text-align: center;
     margin: 4px 0 20px;
   }
@@ -576,7 +608,9 @@
   /* ── SPLASH SCREEN ── */
   #splash {
     position: fixed; inset: 0; z-index: 999;
-    background: #fff;
+    background-color: var(--bg);
+    background-image: radial-gradient(rgba(31,27,22,0.06) 1px, transparent 1px);
+    background-size: 18px 18px;
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0;
     transition: opacity 0.5s ease;
   }
@@ -632,12 +666,14 @@
 
   /* ── SECTION LABEL ── */
   .section-label {
-    font-size: 13px;
+    font-family: var(--font-display);
+    font-size: 11px;
     font-weight: 600;
     color: var(--text-secondary);
     align-self: flex-start;
     padding: 0 4px;
-    letter-spacing: -0.1px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
   }
 
   /* ── CAKE CANVAS WRAPPER ── */
@@ -723,8 +759,9 @@
     transform: translateX(-50%);
     z-index: 200;
     background: #fff;
-    border-radius: 32px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 1.5px 6px rgba(0,0,0,0.07);
+    border: 1.5px dashed rgba(45,92,74,0.32);
+    border-radius: 18px;
+    box-shadow: 0 10px 32px rgba(31,27,22,0.10), 0 2px 8px rgba(31,27,22,0.05);
     display: flex;
     align-items: center;
     padding: 6px 8px;
@@ -746,7 +783,7 @@
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     padding: 8px 4px 6px;
-    border-radius: 24px;
+    border-radius: 12px;
     outline: none;
     position: relative;
     transition: background 0.25s ease;
@@ -754,32 +791,36 @@
   }
   .nav-tab:active { opacity: 0.6; }
 
-  .nav-tab i {
+  .nav-tab i, .nav-tab svg {
     width: 22px; height: 22px;
     color: rgba(60,60,67,0.4);
     transition: color 0.2s, transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
     display: block;
   }
   .nav-tab span {
-    font-size: 10px;
-    font-weight: 500;
+    font-size: 9px;
+    font-weight: 600;
     color: rgba(60,60,67,0.4);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Roboto, sans-serif;
-    letter-spacing: -0.1px;
+    font-family: var(--font-display);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     transition: color 0.2s;
     line-height: 1;
   }
 
   /* Active pill highlight */
   .nav-tab.active {
-    background: var(--pink);
+    background: var(--text);
   }
-  .nav-tab.active i {
-    color: #fff;
+  .nav-tab.active i, .nav-tab.active svg {
+    color: var(--pink-light);
+    width: 24px; height: 24px;
+    stroke-width: 2.4px;
+    filter: drop-shadow(0 0 6px rgba(224,147,92,0.45));
     transform: translateY(-2px) scale(1.12);
   }
   .nav-tab.active span {
-    color: rgba(255,255,255,0.9);
+    color: var(--bg);
     font-weight: 600;
   }
 
@@ -810,9 +851,10 @@
     padding: 8px 0 4px;
   }
   .profile-name {
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-family: var(--font-display);
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
     color: var(--text);
     text-align: center;
     line-height: 1.2;
@@ -821,7 +863,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: linear-gradient(135deg, rgba(255,45,85,0.10), rgba(175,82,222,0.10));
+    background: linear-gradient(135deg, rgba(193,98,45,0.10), rgba(91,124,153,0.10));
     border-radius: 20px;
     padding: 5px 14px;
     font-size: 13px;
@@ -945,7 +987,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #fff;
-    box-shadow: 0 4px 24px rgba(255,45,85,0.18), 0 2px 8px rgba(0,0,0,0.10);
+    box-shadow: 0 4px 24px rgba(193,98,45,0.18), 0 2px 8px rgba(0,0,0,0.10);
     display: block;
   }
   .profile-avatar-fallback {
@@ -954,7 +996,7 @@
     border-radius: 50%;
     background: linear-gradient(135deg, var(--pink), var(--purple));
     border: 4px solid #fff;
-    box-shadow: 0 4px 24px rgba(255,45,85,0.18), 0 2px 8px rgba(0,0,0,0.10);
+    box-shadow: 0 4px 24px rgba(193,98,45,0.18), 0 2px 8px rgba(0,0,0,0.10);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -994,6 +1036,547 @@
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
+
+  /* ── REDESIGNED INTRO SCREEN ── */
+
+  /* Ambient floating petals */
+  .petal {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    font-size: 16px;
+    animation: petalFloat linear infinite;
+    opacity: 0;
+  }
+  @keyframes petalFloat {
+    0%   { transform: translateY(-40px) rotate(0deg) translateX(0px); opacity: 0; }
+    10%  { opacity: 0.7; }
+    85%  { opacity: 0.5; }
+    100% { transform: translateY(110vh) rotate(720deg) translateX(60px); opacity: 0; }
+  }
+
+  /* Hero envelope icon — pulsing glow */
+  .intro-icon-wrap {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    width: 96px; height: 96px;
+    border-radius: 28px;
+    background: linear-gradient(145deg, rgba(193,98,45,0.12), rgba(91,124,153,0.10));
+    border: 1.5px dashed rgba(193,98,45,0.35);
+    margin: 0 auto;
+    flex-shrink: 0;
+  }
+  .intro-icon-glow {
+    position: absolute;
+    inset: -14px;
+    border-radius: 36px;
+    background: radial-gradient(ellipse at center, rgba(193,98,45,0.18) 0%, transparent 70%);
+    animation: iconPulse 3s ease-in-out infinite;
+  }
+  @keyframes iconPulse {
+    0%,100% { opacity: 0.5; transform: scale(0.92); }
+    50%      { opacity: 1;   transform: scale(1.08); }
+  }
+
+  /* "Made just for you" headline — refined */
+  .intro-headline {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 6vw, 28px);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    line-height: 1.25;
+    text-align: center;
+  }
+  .intro-headline em {
+    font-style: normal;
+    color: var(--pink);
+  }
+
+  /* Message text — warmer, more personal feel */
+  .intro-message {
+    width: 100%;
+    background: var(--card);
+    border: 1.5px dashed rgba(45,92,74,0.25);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow);
+    padding: 20px 22px;
+    font-size: 15.5px;
+    color: var(--text-secondary);
+    line-height: 1.78;
+    letter-spacing: -0.1px;
+    text-align: center;
+    position: relative;
+  }
+  .intro-message::before {
+    content: '"';
+    position: absolute;
+    top: 8px; left: 14px;
+    font-size: 42px;
+    font-family: Georgia, serif;
+    color: rgba(193,98,45,0.18);
+    line-height: 1;
+  }
+
+  /* Unlock hint banner */
+  .unlock-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, rgba(193,98,45,0.07), rgba(91,124,153,0.07));
+    border: 1.5px dashed rgba(193,98,45,0.22);
+    border-radius: 12px;
+    padding: 14px 18px;
+    width: 100%;
+  }
+  .unlock-hint-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .unlock-hint-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: -0.1px;
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  /* Countdown redesign — warmer look */
+  .cd-card-new {
+    width: 100%;
+    background: var(--card);
+    border: 1.5px dashed rgba(45,92,74,0.25);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+  }
+  .cd-card-new::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--pink), var(--pink-light), var(--purple));
+    opacity: 0.6;
+  }
+  .cd-header-new {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 20px 12px;
+    border-bottom: 1px dashed var(--separator);
+  }
+  .cd-header-label {
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-caption);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .cd-header-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--pink);
+    animation: cdDotPulse 1.4s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes cdDotPulse {
+    0%,100% { opacity: 0.3; transform: scale(0.8); }
+    50%      { opacity: 1;   transform: scale(1.3); }
+  }
+  .cd-grid-new {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 18px 12px 20px;
+    gap: 0;
+  }
+  .cd-unit-new {
+    display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 1;
+  }
+  .cd-num-new {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 8vw, 36px);
+    font-weight: 700;
+    color: var(--pink);
+    letter-spacing: -2px;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 2px 12px rgba(193,98,45,0.2);
+    transition: transform 0.12s ease;
+  }
+  .cd-lbl-new {
+    font-family: var(--font-display);
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--text-caption);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .cd-sep-new {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 300;
+    color: rgba(193,98,45,0.35);
+    align-self: flex-start;
+    margin-top: 4px;
+    padding: 0 2px;
+    line-height: 1;
+  }
+
+  /* Warm memory strip */
+  .memory-strip {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .memory-tile {
+    flex: 1;
+    background: var(--card);
+    border: 1.5px dashed rgba(45,92,74,0.22);
+    border-radius: 12px;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    box-shadow: var(--shadow);
+  }
+  .memory-tile-emoji { font-size: 22px; }
+  .memory-tile-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.06em;
+    text-align: center;
+    font-family: var(--font-display);
+  }
+  .memory-tile-val {
+    font-size: 12px;
+    color: var(--pink);
+    font-weight: 700;
+    font-family: var(--font-display);
+    letter-spacing: -0.3px;
+  }
+
+  /* "Welcome home" panel — celebratory */
+  .welcome-panel {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(193,98,45,0.07) 0%, rgba(91,124,153,0.08) 100%);
+    border: 1.5px dashed rgba(193,98,45,0.3);
+    border-radius: var(--radius-card);
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .welcome-panel::before {
+    content: '🎉';
+    position: absolute;
+    top: -8px; right: -8px;
+    font-size: 48px;
+    opacity: 0.12;
+    transform: rotate(20deg);
+  }
+  .welcome-panel-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--pink);
+    letter-spacing: -0.3px;
+  }
+  .welcome-panel-sub {
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    letter-spacing: -0.1px;
+  }
+
+  /* Heartbeat open-gift button */
+  .btn-gift {
+    width: 100%;
+    min-height: 56px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--pink) 0%, #D4744A 50%, var(--pink-light) 100%);
+    background-size: 200% 200%;
+    animation: btnGradShift 4s ease infinite;
+    box-shadow: 0 8px 28px rgba(193,98,45,0.32), 0 2px 8px rgba(193,98,45,0.18);
+    border: none;
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 120ms, box-shadow 120ms;
+    touch-action: manipulation;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-gift::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+    border-radius: 16px;
+  }
+  @keyframes btnGradShift {
+    0%,100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+  }
+  .btn-gift:active { transform: scale(0.97); box-shadow: 0 4px 14px rgba(193,98,45,0.22); }
+  .btn-gift-pulse {
+    width: 28px; height: 28px;
+    background: rgba(255,255,255,0.22);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    animation: btnIconPulse 1.8s ease-in-out infinite;
+    flex-shrink: 0;
+    position: relative; z-index: 1;
+  }
+  @keyframes btnIconPulse {
+    0%,100% { transform: scale(1); }
+    50%      { transform: scale(1.18); }
+  }
+  .btn-gift-label { position: relative; z-index: 1; }
+
+  /* "from Martin" signature strip at bottom */
+  .from-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-caption);
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+  }
+  .from-strip-heart {
+    color: var(--pink);
+    animation: heartBeat 1.6s ease-in-out infinite;
+    display: inline-block;
+  }
+  /* ── CONSENT SCREEN ── */
+  .consent-envelope {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .env-glow {
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(193,98,45,0.18) 0%, transparent 70%);
+    animation: iconPulse 3s ease-in-out infinite;
+  }
+  .env-body {
+    position: relative;
+    z-index: 1;
+    width: 100px;
+    height: 76px;
+    background: #fff;
+    border: 1.5px dashed rgba(193,98,45,0.35);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 28px rgba(193,98,45,0.14), 0 2px 8px rgba(0,0,0,0.06);
+    animation: envFloat 4s ease-in-out infinite;
+  }
+  @keyframes envFloat {
+    0%,100% { transform: translateY(0px) rotate(-1deg); }
+    50%      { transform: translateY(-8px) rotate(1deg); }
+  }
+  .env-flap {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 44px;
+    background: linear-gradient(160deg, rgba(193,98,45,0.10), rgba(91,124,153,0.08));
+    border-radius: 10px 10px 0 0;
+    clip-path: polygon(0 0, 100% 0, 50% 60%);
+    border-bottom: 1px dashed rgba(193,98,45,0.2);
+  }
+  .env-heart {
+    font-size: 32px;
+    position: relative;
+    z-index: 1;
+    margin-top: 8px;
+    animation: heartBeat 1.8s ease-in-out infinite;
+  }
+
+  /* Yes button — warm, inviting, full presence */
+  .consent-yes-btn {
+    width: 100%;
+    min-height: 60px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #1F1B16 0%, #2D1A0E 100%);
+    border: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 12px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    box-shadow: 0 8px 28px rgba(31,27,22,0.22), 0 2px 8px rgba(31,27,22,0.1);
+    transition: transform 120ms, box-shadow 120ms, opacity 120ms;
+    position: relative;
+    overflow: hidden;
+  }
+  .consent-yes-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, transparent 50%);
+    border-radius: 18px;
+  }
+  .consent-yes-btn:active { transform: scale(0.97); box-shadow: 0 4px 14px rgba(31,27,22,0.18); }
+  .consent-yes-heart {
+    font-size: 22px;
+    animation: heartBeat 1.8s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  .consent-yes-label {
+    flex: 1;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  /* Skip button — very quiet, ghost style */
+  .consent-skip-btn {
+    width: 100%;
+    height: 44px;
+    border-radius: 12px;
+    background: transparent;
+    border: 1px solid rgba(31,27,22,0.12);
+    color: var(--text-caption);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: opacity 120ms, background 120ms;
+  }
+  /* ── SCRATCH CARD ── */
+  .scratch-outer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .scratch-frame {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 3/2;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 36px rgba(193,98,45,0.18), 0 2px 8px rgba(0,0,0,0.08);
+    cursor: crosshair;
+    /* Prevent text selection while scratching */
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .scratch-reveal {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #fff9f5 0%, #fff3ec 50%, #fdf0fb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+  }
+  .scratch-reveal-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  .scratch-reveal-emoji {
+    font-size: 48px;
+    animation: heartBeat 2s ease-in-out infinite;
+  }
+  .scratch-reveal-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+  }
+  .scratch-reveal-msg {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    letter-spacing: -0.1px;
+    max-width: 240px;
+  }
+  .scratch-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    touch-action: none;
+  }
+  .scratch-progress-wrap {
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .scratch-progress-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--fill-opaque);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .scratch-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--pink), var(--pink-light));
+    border-radius: 3px;
+    transition: width 0.3s ease;
+  }
+  .scratch-progress-label {
+    font-size: 12px;
+    font-family: var(--font-display);
+    color: var(--text-caption);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    min-width: 80px;
+    text-align: right;
+  }
 </style>
 </head>
 <body>
@@ -1008,57 +1591,143 @@
   </div>
 </div>
 
-<!-- S1: INTRO / COUNTDOWN -->
-<div id="s-intro" class="screen active">
-  <div style="height: 8px;"></div>
-  <div style="display:flex;justify-content:center;align-items:center;width:72px;height:72px;border-radius:22px;background:rgba(255,45,85,0.10);margin:0 auto;">
-    <i data-lucide="heart" style="width:36px;height:36px;stroke:#FF2D55;stroke-width:1.8;fill:rgba(255,45,85,0.18);"></i>
-  </div>
-  <div class="large-title">Made just for you, Ammu.</div>
-  <div class="subtext">Happy Birthday Ammu! I didn't want my wish to interrupt your day, so I kept this for the end. Enjoy every second of your birthday. 🌸<br><br>This gift unlocks when you get back home. 🏠</div>
+<!-- S1: INTRO / COUNTDOWN — REDESIGNED -->
+<div id="s-intro" class="screen active" style="gap: 16px; position: relative; z-index: 1;">
 
-  <div class="countdown-card">
-    <div class="countdown-header">Opens in</div>
-    <div class="countdown-grid">
-      <div class="cd-unit"><div class="cd-num" id="cd-d">00</div><div class="cd-lbl">days</div></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">hrs</div></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><div class="cd-num" id="cd-m">00</div><div class="cd-lbl">min</div></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">sec</div></div>
+  <!-- Floating petals injected by JS -->
+
+  <!-- Icon -->
+  <div style="height: 4px;"></div>
+  <div class="intro-icon-wrap">
+    <div class="intro-icon-glow"></div>
+    <i data-lucide="heart" style="width:42px;height:42px;stroke:#C1622D;stroke-width:1.5;fill:rgba(193,98,45,0.2);position:relative;z-index:1;"></i>
+  </div>
+
+  <!-- Headline -->
+  <div class="intro-headline">
+    Made just for you.
+  </div>
+
+  <!-- Personal message card -->
+  <div class="intro-message">
+    I didn't want my wish to interrupt your day — so I kept this for the very end. Enjoy every single second of your birthday. 🌸<br><br>
+    This gift unlocks when you're back home. It was made with a lot of heart, just for you.
+  </div>
+
+  <!-- Unlock hint -->
+  <div class="unlock-hint" id="unlock-hint-bar">
+    <div class="unlock-hint-icon">🏠</div>
+    <div class="unlock-hint-text">Your gift unlocks the moment you arrive home. Come back here when you do!</div>
+  </div>
+
+  <!-- Countdown — redesigned -->
+  <div class="cd-card-new">
+    <div class="cd-header-new">
+      <div class="cd-header-dot"></div>
+      <div class="cd-header-label">Opens in</div>
+    </div>
+    <div class="cd-grid-new">
+      <div class="cd-unit-new">
+        <div class="cd-num-new" id="cd-d">00</div>
+        <div class="cd-lbl-new">days</div>
+      </div>
+      <div class="cd-sep-new">:</div>
+      <div class="cd-unit-new">
+        <div class="cd-num-new" id="cd-h">00</div>
+        <div class="cd-lbl-new">hrs</div>
+      </div>
+      <div class="cd-sep-new">:</div>
+      <div class="cd-unit-new">
+        <div class="cd-num-new" id="cd-m">00</div>
+        <div class="cd-lbl-new">min</div>
+      </div>
+      <div class="cd-sep-new">:</div>
+      <div class="cd-unit-new">
+        <div class="cd-num-new" id="cd-s">00</div>
+        <div class="cd-lbl-new">sec</div>
+      </div>
     </div>
   </div>
 
+  <!-- Welcome home panel (hidden until unlocked) -->
   <div id="cd-msg" style="display:none; width:100%;">
-    <div class="card" style="text-align:center; gap: 6px; display: flex; flex-direction: column;">
-      <div style="font-size: 17px; font-weight: 600; color: var(--pink); letter-spacing: -0.2px;">Welcome back home! 🎉</div>
-      <div class="subtext">Your gift is ready to open. Hope you had the most amazing birthday! 💜</div>
+    <div class="welcome-panel">
+      <div class="welcome-panel-title">Welcome back home! 🎉</div>
+      <div class="welcome-panel-sub">You made it! Your gift is ready and waiting. Hope your birthday was absolutely magical, Ammu. 💜</div>
     </div>
   </div>
 
-  <button class="btn-primary" id="open-gift-btn" style="display:none;" onclick="unlockNav(); go('s-consent')">
-    <i data-lucide="gift" style="width:22px;height:22px;stroke:#fff;"></i>
-    Open your gift
+  <!-- Open gift button -->
+  <button class="btn-gift" id="open-gift-btn" style="display:none;" onclick="unlockNav(); go('s-consent')">
+    <div class="btn-gift-pulse">
+      <i data-lucide="gift" style="width:16px;height:16px;stroke:#fff;stroke-width:2.2;"></i>
+    </div>
+    <span class="btn-gift-label">Open your gift</span>
   </button>
+
+  <!-- From signature -->
+  <div class="from-strip">
+    <span>made with</span>
+    <span class="from-strip-heart">♥</span>
+    <span>by Martin</span>
+  </div>
+
 </div>
 
-<!-- S-CONSENT: HEART GATE -->
-<div id="s-consent" class="screen">
-  <div style="height: 8px;"></div>
-  <div style="font-size: 52px; text-align: center; line-height: 1;">💌</div>
-  <div class="title">Before you open this</div>
-  <div class="subtext">This is something made with a lot of heart for you, Ammu. If you're ready to open it with your whole heart — then step in. 🌸<br><br>But if it's not the right moment, that's okay too.</div>
+<!-- S-CONSENT: HEART GATE — REDESIGNED -->
+<div id="s-consent" class="screen" style="gap: 0; justify-content: center; padding-top: 0;">
 
-  <div class="card" style="gap: 12px; display: flex; flex-direction: column;">
-    <button class="btn-primary" onclick="go('s-wish')">
-      <i data-lucide="heart" style="width:22px;height:22px;stroke:#fff;fill:rgba(255,255,255,0.35);"></i>
-      Yes, I'll open it with my whole heart
-    </button>
-    <button class="btn-destructive" onclick="go('s-ignore')">
-      <i data-lucide="x" style="width:22px;height:22px;stroke:#FF3B30;"></i>
-      Not now — I'll skip it
-    </button>
+  <!-- Full-bleed soft gradient backdrop -->
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 30%, rgba(193,98,45,0.09) 0%, transparent 70%);pointer-events:none;z-index:0;"></div>
+
+  <!-- Envelope illustration -->
+  <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:28px;width:100%;padding:0 24px;">
+
+    <!-- Animated envelope -->
+    <div class="consent-envelope">
+      <div class="env-body">
+        <div class="env-flap"></div>
+        <div class="env-heart">💌</div>
+      </div>
+      <div class="env-glow"></div>
+    </div>
+
+    <!-- Headline block -->
+    <div style="text-align:center;display:flex;flex-direction:column;gap:10px;">
+      <div style="font-family:var(--font-display);font-size:clamp(24px,7vw,30px);font-weight:700;letter-spacing:-0.8px;color:var(--text);line-height:1.2;">
+        Before you open this
+      </div>
+      <div style="font-size:15px;color:var(--text-secondary);line-height:1.75;letter-spacing:-0.1px;max-width:320px;margin:0 auto;">
+        This was made with a lot of heart, just for you, Ammu. Step in only when you're ready to receive it the same way. 🌸
+      </div>
+    </div>
+
+    <!-- Divider with petals -->
+    <div style="display:flex;align-items:center;gap:10px;width:100%;max-width:280px;">
+      <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(193,98,45,0.2));"></div>
+      <span style="font-size:14px;">🌸</span>
+      <div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(193,98,45,0.2),transparent);"></div>
+    </div>
+
+    <!-- CTA: YES -->
+    <div style="width:100%;display:flex;flex-direction:column;gap:12px;">
+      <button class="consent-yes-btn" onclick="go('s-wish')">
+        <span class="consent-yes-heart">🤍</span>
+        <span class="consent-yes-label">Yes, I'll open it with my whole heart</span>
+        <span style="font-size:16px;opacity:0.7;">→</span>
+      </button>
+
+      <!-- CTA: NOT NOW — quiet, small -->
+      <button class="consent-skip-btn" onclick="go('s-ignore')">
+        Not right now — maybe later
+      </button>
+    </div>
+
+    <!-- Reassurance note -->
+    <div style="font-size:12.5px;color:var(--text-caption);text-align:center;line-height:1.6;padding:0 12px;">
+      No pressure at all. It'll always be here waiting for you.
+    </div>
+
   </div>
 </div>
 
@@ -1087,7 +1756,7 @@ Stay safe. Stay happy. Stay blessed. 🌸
 <!-- S2: BIRTHDAY WISH -->
 <div id="s-wish" class="screen scroll">
   <button class="back-btn" onclick="go('s-intro')">
-    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#007AFF;stroke-width:2.5;"></i>
+    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#4C7A99;stroke-width:2.5;"></i>
     Back
   </button>
   <div class="title">Happy Birthday Ammu! 🎂</div>
@@ -1114,7 +1783,7 @@ Martin 🤍</div>
 <!-- S2B: CAKE & CANDLES -->
 <div id="s-cake" class="screen scroll">
   <button class="back-btn" onclick="go('s-wish')">
-    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#007AFF;stroke-width:2.5;"></i>
+    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#4C7A99;stroke-width:2.5;"></i>
     Back
   </button>
   <div class="title">Make a wish! 🕯️</div>
@@ -1141,44 +1810,63 @@ Martin 🤍</div>
   </button>
 </div>
 
-<!-- S2C: STAR MAP -->
+<!-- S2C: STAR MAP — BRAND MATCHED -->
 <div id="s-stars" class="screen scroll">
   <button class="back-btn" onclick="go('s-cake')">
-    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#007AFF;stroke-width:2.5;"></i>
+    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#4C7A99;stroke-width:2.5;"></i>
     Back
   </button>
+
   <div class="title">Your birthday sky 🌌</div>
   <div class="subtext">How the stars looked on <strong style="color:var(--text);font-weight:600;">June 13, 2002</strong> — the night you were born.</div>
 
-  <div class="card-no-pad" style="position: relative;">
-    <canvas id="star-canvas" width="380" height="360" style="width:100%;display:block;background:linear-gradient(180deg,#08001e 0%,#0d0535 40%,#1a0a4a 100%);"></canvas>
-    <div class="star-overlay">
-      <div style="font-size: 15px; font-weight: 600; color: #e0c8ff; letter-spacing: -0.1px;">June 13, 2002 · Chennai, India</div>
-      <div style="font-size: 13px; color: rgba(224,200,255,0.6); margin-top: 4px;">The universe celebrated too 🌠</div>
+  <!-- Poster in photo-card style -->
+  <div class="photo-card">
+    <div class="photo-wrap" style="aspect-ratio:3/4; cursor:default;">
+      <img src="starposter.png" alt="Your birthday star poster" style="filter:none;">
+      <!-- no blur overlay — show directly -->
+    </div>
+    <div class="photo-footer">
+      <div style="display:flex;flex-direction:column;gap:2px;">
+        <span style="font-size:15px;font-weight:600;color:var(--text);letter-spacing:-0.2px;">June 13, 2002</span>
+        <span class="caption">Chennai, India · The universe celebrated too 🌠</span>
+      </div>
+      <button class="save-btn show" onclick="savePhoto('starposter.png')">
+        <i data-lucide="arrow-down-to-line" style="width:16px;height:16px;stroke:#4C7A99;"></i>
+        Save
+      </button>
     </div>
   </div>
 
-  <div class="card-no-pad">
-    <div class="constellation-grid">
-      <div class="constellation-cell">
-        <div class="constellation-emoji">♊</div>
-        <div class="constellation-name">Gemini</div>
-        <div class="constellation-sub">Your sun sign</div>
+  <!-- Constellation facts — brand cards -->
+  <div class="section-label">What was in the sky</div>
+  <div class="inset-list">
+    <div class="inset-row">
+      <div class="inset-row-icon" style="background:rgba(193,98,45,0.10);font-size:18px;display:flex;align-items:center;justify-content:center;">♊</div>
+      <div class="inset-row-content">
+        <div class="inset-row-title">Gemini</div>
+        <div class="inset-row-sub">Your sun sign — curious, warm, and full of light.</div>
       </div>
-      <div class="constellation-cell">
-        <div class="constellation-emoji">⭐</div>
-        <div class="constellation-name">Orion</div>
-        <div class="constellation-sub">Rising in the east</div>
+    </div>
+    <div class="inset-row">
+      <div class="inset-row-icon" style="background:rgba(91,124,153,0.10);font-size:18px;display:flex;align-items:center;justify-content:center;">🌙</div>
+      <div class="inset-row-content">
+        <div class="inset-row-title">Waxing Moon</div>
+        <div class="inset-row-sub">62% illuminated — growing, just like you.</div>
       </div>
-      <div class="constellation-cell">
-        <div class="constellation-emoji">🌙</div>
-        <div class="constellation-name">Waxing Moon</div>
-        <div class="constellation-sub">62% illuminated</div>
+    </div>
+    <div class="inset-row">
+      <div class="inset-row-icon" style="background:rgba(193,98,45,0.08);font-size:18px;display:flex;align-items:center;justify-content:center;">💫</div>
+      <div class="inset-row-content">
+        <div class="inset-row-title">Venus</div>
+        <div class="inset-row-sub">Planet of love — shining bright that night.</div>
       </div>
-      <div class="constellation-cell">
-        <div class="constellation-emoji">💫</div>
-        <div class="constellation-name">Venus</div>
-        <div class="constellation-sub">Planet of love 💜</div>
+    </div>
+    <div class="inset-row">
+      <div class="inset-row-icon" style="background:rgba(45,92,74,0.08);font-size:18px;display:flex;align-items:center;justify-content:center;">⭐</div>
+      <div class="inset-row-content">
+        <div class="inset-row-title">Orion</div>
+        <div class="inset-row-sub">Rising in the east to welcome you.</div>
       </div>
     </div>
   </div>
@@ -1192,7 +1880,7 @@ Martin 🤍</div>
 <!-- S3: PHOTO 1 -->
 <div id="s-photo1" class="screen scroll">
   <button class="back-btn" onclick="go('s-stars')">
-    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#007AFF;stroke-width:2.5;"></i>
+    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#4C7A99;stroke-width:2.5;"></i>
     Back
   </button>
   <div class="title">Photo 1 of 2</div>
@@ -1211,7 +1899,7 @@ Martin 🤍</div>
     <div class="photo-footer">
       <span class="subtext" style="font-size: 15px; color: var(--text);">Your photo</span>
       <button class="save-btn" id="sb1" onclick="savePhoto('image1.png')">
-        <i data-lucide="arrow-down-to-line" style="width:16px;height:16px;stroke:#007AFF;"></i>
+        <i data-lucide="arrow-down-to-line" style="width:16px;height:16px;stroke:#4C7A99;"></i>
         Save
       </button>
     </div>
@@ -1225,10 +1913,10 @@ Martin 🤍</div>
 <!-- S4: PHOTO 2 -->
 <div id="s-photo2" class="screen scroll">
   <button class="back-btn" onclick="go('s-photo1')">
-    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#007AFF;stroke-width:2.5;"></i>
+    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#4C7A99;stroke-width:2.5;"></i>
     Back
   </button>
-  <div class="title">Photo 2 of 2 <i data-lucide="heart" style="width:22px;height:22px;stroke:#FF2D55;fill:rgba(255,45,85,0.2);vertical-align:middle;"></i></div>
+  <div class="title">Photo 2 of 2 <i data-lucide="heart" style="width:22px;height:22px;stroke:#C1622D;fill:rgba(193,98,45,0.2);vertical-align:middle;"></i></div>
   <div class="dots">
     <div class="dot"></div>
     <div class="dot active"></div>
@@ -1244,7 +1932,7 @@ Martin 🤍</div>
     <div class="photo-footer">
       <span class="subtext" style="font-size: 15px; color: var(--text);">Your photo</span>
       <button class="save-btn" id="sb2" onclick="savePhoto('image2.png')">
-        <i data-lucide="arrow-down-to-line" style="width:16px;height:16px;stroke:#007AFF;"></i>
+        <i data-lucide="arrow-down-to-line" style="width:16px;height:16px;stroke:#4C7A99;"></i>
         Save
       </button>
     </div>
@@ -1258,7 +1946,7 @@ Martin 🤍</div>
 <!-- S5: WEBSITE -->
 <div id="s-website" class="screen scroll">
   <button class="back-btn" onclick="go('s-photo2')">
-    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#007AFF;stroke-width:2.5;"></i>
+    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#4C7A99;stroke-width:2.5;"></i>
     Back
   </button>
   <img src="logo.png" alt="Glam by Harini" style="width:80px;height:80px;object-fit:contain;border-radius:18px;">
@@ -1280,8 +1968,8 @@ Martin 🤍</div>
 
   <div class="inset-list">
     <div class="inset-row">
-      <div class="inset-row-icon" style="background:rgba(255,45,85,0.1);">
-        <i data-lucide="instagram" style="width:22px;height:22px;stroke:#FF2D55;"></i>
+      <div class="inset-row-icon" style="background:rgba(193,98,45,0.1);">
+        <i data-lucide="instagram" style="width:22px;height:22px;stroke:#C1622D;"></i>
       </div>
       <div class="inset-row-content">
         <div class="inset-row-title">Share on Instagram</div>
@@ -1289,8 +1977,8 @@ Martin 🤍</div>
       </div>
     </div>
     <div class="inset-row">
-      <div class="inset-row-icon" style="background:rgba(0,122,255,0.1);">
-        <i data-lucide="search" style="width:22px;height:22px;stroke:#007AFF;"></i>
+      <div class="inset-row-icon" style="background:rgba(76,122,153,0.1);">
+        <i data-lucide="search" style="width:22px;height:22px;stroke:#4C7A99;"></i>
       </div>
       <div class="inset-row-content">
         <div class="inset-row-title">You're on Google now!</div>
@@ -1298,8 +1986,8 @@ Martin 🤍</div>
       </div>
     </div>
     <div class="inset-row">
-      <div class="inset-row-icon" style="background:rgba(175,82,222,0.1);">
-        <i data-lucide="pencil" style="width:22px;height:22px;stroke:#AF52DE;"></i>
+      <div class="inset-row-icon" style="background:rgba(91,124,153,0.1);">
+        <i data-lucide="pencil" style="width:22px;height:22px;stroke:#5B7C99;"></i>
       </div>
       <div class="inset-row-content">
         <div class="inset-row-title">Need to update your prices?</div>
@@ -1317,12 +2005,12 @@ Martin 🤍</div>
 <!-- S6: PIN -->
 <div id="s-pin" class="screen scroll">
   <button class="back-btn" onclick="go('s-website')">
-    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#007AFF;stroke-width:2.5;"></i>
+    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#4C7A99;stroke-width:2.5;"></i>
     Back
   </button>
   <div style="height: 8px;"></div>
   <div class="icon-wrap">
-    <i data-lucide="lock" style="width:32px;height:32px;stroke:#FF2D55;stroke-width:1.5;"></i>
+    <i data-lucide="lock" style="width:32px;height:32px;stroke:#C1622D;stroke-width:1.5;"></i>
   </div>
   <div class="title">Secret message</div>
   <div class="subtext">Enter the PIN to unlock a personal message just for you.</div>
@@ -1359,11 +2047,11 @@ Martin 🤍</div>
 <!-- S7: SECRET MESSAGE -->
 <div id="s-secret" class="screen scroll">
   <button class="back-btn" onclick="go('s-pin')">
-    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#007AFF;stroke-width:2.5;"></i>
+    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#4C7A99;stroke-width:2.5;"></i>
     Back
   </button>
   <div class="icon-wrap">
-    <i data-lucide="heart" style="width:32px;height:32px;stroke:#FF2D55;fill:rgba(255,45,85,0.2);stroke-width:1.5;"></i>
+    <i data-lucide="heart" style="width:32px;height:32px;stroke:#C1622D;fill:rgba(193,98,45,0.2);stroke-width:1.5;"></i>
   </div>
   <div class="title">From Martin, with love 💜</div>
   <div class="prose-card">
@@ -1402,11 +2090,11 @@ Martin 🤍</div>
 <!-- S8: REPLY SCREEN -->
 <div id="s-reply" class="screen scroll">
   <button class="back-btn" onclick="go('s-secret')">
-    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#007AFF;stroke-width:2.5;"></i>
+    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#4C7A99;stroke-width:2.5;"></i>
     Back
   </button>
   <div class="icon-wrap">
-    <i data-lucide="pencil-line" style="width:32px;height:32px;stroke:#FF2D55;stroke-width:1.5;"></i>
+    <i data-lucide="pencil-line" style="width:32px;height:32px;stroke:#C1622D;stroke-width:1.5;"></i>
   </div>
   <div class="title">Your reply to Martin 💌</div>
   <div class="subtext">Whatever is in your heart — say it. No limits. He'll receive it. 🤍</div>
@@ -1429,8 +2117,67 @@ Martin 🤍</div>
       <div class="subtext">He'll see your message. Take care, Ammu. 🌸</div>
     </div>
   </div>
+
+  <button class="btn-secondary" id="go-scratch-btn" style="display:none;" onclick="go('s-scratch')">
+    🎁 One more surprise waiting...
+  </button>
 </div>
 
+
+<!-- S-SCRATCH: SCRATCH CARD -->
+<div id="s-scratch" class="screen scroll">
+  <button class="back-btn" onclick="go('s-reply')">
+    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#4C7A99;stroke-width:2.5;"></i>
+    Back
+  </button>
+
+  <div style="height:4px;"></div>
+
+  <!-- Header -->
+  <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div style="font-size:44px;animation:envFloat 4s ease-in-out infinite;">🎁</div>
+    <div class="title">A little something for you</div>
+    <div class="subtext" id="scratch-hint">Scratch the card to reveal your surprise 🌸</div>
+  </div>
+
+  <!-- Scratch card wrapper -->
+  <div class="scratch-outer">
+    <div class="scratch-frame">
+      <!-- Hidden message underneath -->
+      <div class="scratch-reveal" id="scratch-reveal">
+        <div class="scratch-reveal-inner">
+          <div class="scratch-reveal-emoji" id="scratch-emoji">🌸</div>
+          <div class="scratch-reveal-title" id="scratch-title">Loading...</div>
+          <div class="scratch-reveal-msg" id="scratch-msg"></div>
+        </div>
+      </div>
+      <!-- Canvas overlay — the scratch layer -->
+      <canvas id="scratch-canvas" class="scratch-canvas"></canvas>
+    </div>
+    <!-- Progress hint -->
+    <div class="scratch-progress-wrap">
+      <div class="scratch-progress-bar">
+        <div class="scratch-progress-fill" id="scratch-fill"></div>
+      </div>
+      <div class="scratch-progress-label" id="scratch-pct">0% scratched</div>
+    </div>
+  </div>
+
+  <!-- Reset -->
+  <button class="btn-secondary" id="scratch-reset-btn" onclick="resetScratch()" style="display:none;">
+    <i data-lucide="rotate-ccw" style="width:20px;height:20px;stroke:currentColor;"></i>
+    Scratch another card
+  </button>
+
+  <!-- Completion message -->
+  <div id="scratch-done-msg" style="display:none;width:100%;">
+    <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;">
+      <div style="font-size:13px;font-weight:600;font-family:var(--font-display);color:var(--text-caption);letter-spacing:0.12em;text-transform:uppercase;">From Martin</div>
+      <div style="font-size:14px;color:var(--text-secondary);line-height:1.65;">Made with love, just for you. Happy Birthday, Ammu. 💜</div>
+    </div>
+  </div>
+
+</div>
 
 <!-- S-PROFILE: AMMU'S PROFILE -->
 <div id="s-profile" class="screen scroll">
@@ -1475,7 +2222,7 @@ Martin 🤍</div>
   <!-- Links -->
   <div class="profile-link-row">
     <a href="https://glambyharini.in" target="_blank" class="profile-link-btn" onclick="notify('website')">
-      <div class="profile-link-icon" style="background: linear-gradient(135deg,#FF2D55,#FF6B8A);">
+      <div class="profile-link-icon" style="background: linear-gradient(135deg,#C1622D,#E0935C);">
         <i data-lucide="globe" style="width:20px;height:20px;stroke:#fff;stroke-width:2;"></i>
       </div>
       <div class="profile-link-text">
@@ -1486,7 +2233,7 @@ Martin 🤍</div>
     </a>
 
     <button class="profile-link-btn" onclick="navigator.clipboard.writeText('https://glambyharini.in').then(()=>{ this.querySelector('.profile-link-title').textContent='Copied! ✅'; setTimeout(()=>{ this.querySelector('.profile-link-title').textContent='Copy Website Link'; },2000); }); notify('copied');">
-      <div class="profile-link-icon" style="background: linear-gradient(135deg,#AF52DE,#007AFF);">
+      <div class="profile-link-icon" style="background: linear-gradient(135deg,#5B7C99,#4C7A99);">
         <i data-lucide="copy" style="width:20px;height:20px;stroke:#fff;stroke-width:2;"></i>
       </div>
       <div class="profile-link-text">
@@ -1678,6 +2425,7 @@ var _navMap = {
   's-secret':  'nav-secret',
   's-reply':   'nav-secret',
   's-sent':    'nav-secret',
+  's-scratch': 'nav-scratch',
   's-profile':  'nav-profile',
 };
 function _setNav(navId) {
@@ -1775,7 +2523,7 @@ function updateCharCount() {
 async function sendReply() {
   const msg = document.getElementById('reply-box').value.trim();
   if (!msg) {
-    document.getElementById('reply-box').style.background = 'rgba(255,59,48,0.08)';
+    document.getElementById('reply-box').style.background = 'rgba(178,58,46,0.08)';
     document.getElementById('reply-box').placeholder = 'Please write something first... 💕';
     setTimeout(() => document.getElementById('reply-box').style.background = '', 1500);
     return;
@@ -1800,11 +2548,15 @@ async function sendReply() {
   document.getElementById('reply-box').closest('textarea').style.display = 'none';
   document.querySelector('#s-reply .caption').style.display = 'none';
   document.getElementById('reply-sent').style.display = 'block';
+  setTimeout(() => {
+    const sb = document.getElementById('go-scratch-btn');
+    if (sb) sb.style.display = 'flex';
+  }, 1200);
   confetti();
 }
 
 function confetti() {
-  const colors = ['#FF2D55','#AF52DE','#fbbf24','#007AFF','#FF6B8A','#34C759'];
+  const colors = ['#C1622D','#5B7C99','#fbbf24','#4C7A99','#E0935C','#2D5C4A'];
   for (let i = 0; i < 28; i++) {
     const el = document.createElement('div');
     el.className = 'confetti-piece';
@@ -1820,7 +2572,7 @@ const TOTAL_CANDLES = 6;
 let candles = [];
 let audioCtx = null;
 let micActive = false;
-const CANDLE_COLORS = ['#FF2D55','#fbbf24','#007AFF','#AF52DE','#f97316','#34C759'];
+const CANDLE_COLORS = ['#C1622D','#fbbf24','#4C7A99','#5B7C99','#f97316','#2D5C4A'];
 
 function initCake() {
   candles = Array.from({length: TOTAL_CANDLES}, (_, i) => ({ lit: true, id: i }));
@@ -1841,7 +2593,7 @@ function drawCake() {
   // ── BOTTOM TIER ──
   const b1y = H - 86, b1h = 76, b1x = W/2 - 130, b1w = 260;
   const gBot = ctx.createLinearGradient(b1x, b1y, b1x, b1y+b1h);
-  gBot.addColorStop(0,'#FF2D55'); gBot.addColorStop(0.5,'#e0244b'); gBot.addColorStop(1,'#b81c3a');
+  gBot.addColorStop(0,'#C1622D'); gBot.addColorStop(0.5,'#A84F22'); gBot.addColorStop(1,'#8A3F1A');
   ctx.fillStyle = gBot; roundRect(ctx, b1x, b1y, b1w, b1h, 16); ctx.fill();
   ctx.fillStyle = 'rgba(255,255,255,0.15)';
   roundRect(ctx, b1x, b1y, b1w, 16, 16); ctx.fill();
@@ -1852,12 +2604,12 @@ function drawCake() {
   // ── MIDDLE TIER ──
   const m1y = b1y - 68, m1h = 68, m1x = W/2 - 96, m1w = 192;
   const gMid = ctx.createLinearGradient(m1x, m1y, m1x, m1y+m1h);
-  gMid.addColorStop(0,'#AF52DE'); gMid.addColorStop(1,'#7a3ab0');
+  gMid.addColorStop(0,'#5B7C99'); gMid.addColorStop(1,'#3F5A73');
   ctx.fillStyle = gMid; roundRect(ctx, m1x, m1y, m1w, m1h, 12); ctx.fill();
   ctx.fillStyle = 'rgba(255,255,255,0.12)';
   roundRect(ctx, m1x, m1y, m1w, 12, 12); ctx.fill();
   drawDrips(ctx, m1x+8, m1y+4, m1w-16, 8, 10);
-  const dotColors = ['#fbbf24','#007AFF','#FF2D55','#fff'];
+  const dotColors = ['#fbbf24','#4C7A99','#C1622D','#fff'];
   for(let i=0;i<7;i++){
     ctx.fillStyle = dotColors[i%4];
     ctx.beginPath(); ctx.arc(m1x+18+i*26, m1y+40, 5, 0, Math.PI*2); ctx.fill();
@@ -1866,7 +2618,7 @@ function drawCake() {
   // ── TOP TIER ──
   const t1y = m1y - 56, t1h = 56, t1x = W/2 - 64, t1w = 128;
   const gTop = ctx.createLinearGradient(t1x, t1y, t1x, t1y+t1h);
-  gTop.addColorStop(0,'#FF6B8A'); gTop.addColorStop(1,'#FF2D55');
+  gTop.addColorStop(0,'#E0935C'); gTop.addColorStop(1,'#C1622D');
   ctx.fillStyle = gTop; roundRect(ctx, t1x, t1y, t1w, t1h, 10); ctx.fill();
   ctx.fillStyle = 'rgba(255,255,255,0.14)';
   roundRect(ctx, t1x, t1y, t1w, 10, 10); ctx.fill();
@@ -1879,12 +2631,12 @@ function drawCake() {
 
   // Sprinkles
   const sprinkleData = [
-    {x:0.22,y:0.62,r:0.18,c:'#fbbf24'},{x:0.55,y:0.65,r:0.3,c:'#007AFF'},
-    {x:0.75,y:0.60,r:0.05,c:'#FF2D55'},{x:0.35,y:0.70,r:0.45,c:'#AF52DE'},
+    {x:0.22,y:0.62,r:0.18,c:'#fbbf24'},{x:0.55,y:0.65,r:0.3,c:'#4C7A99'},
+    {x:0.75,y:0.60,r:0.05,c:'#C1622D'},{x:0.35,y:0.70,r:0.45,c:'#5B7C99'},
     {x:0.65,y:0.72,r:0.1,c:'#fff'},{x:0.45,y:0.58,r:0.22,c:'#fbbf24'},
-    {x:0.30,y:0.52,r:0.35,c:'#007AFF'},{x:0.70,y:0.55,r:0.6,c:'#f97316'},
-    {x:0.50,y:0.68,r:0.15,c:'#fff'},{x:0.25,y:0.75,r:0.5,c:'#34C759'},
-    {x:0.60,y:0.47,r:0.28,c:'#fbbf24'},{x:0.40,y:0.78,r:0.0,c:'#FF2D55'},
+    {x:0.30,y:0.52,r:0.35,c:'#4C7A99'},{x:0.70,y:0.55,r:0.6,c:'#f97316'},
+    {x:0.50,y:0.68,r:0.15,c:'#fff'},{x:0.25,y:0.75,r:0.5,c:'#2D5C4A'},
+    {x:0.60,y:0.47,r:0.28,c:'#fbbf24'},{x:0.40,y:0.78,r:0.0,c:'#C1622D'},
   ];
   sprinkleData.forEach(s => {
     ctx.save(); ctx.translate(b1x+10 + s.x*(b1w-20), b1y+10 + s.y*58);
@@ -2093,7 +2845,7 @@ function drawStarMap() {
     {x:0.38,y:0.7,r:0.9,b:0.4},{x:0.92,y:0.15,r:1.5,b:0.7},{x:0.12,y:0.45,r:1.0,b:0.4},
   ];
 
-  ctx.strokeStyle = 'rgba(175,82,222,0.3)'; ctx.lineWidth = 0.8;
+  ctx.strokeStyle = 'rgba(91,124,153,0.3)'; ctx.lineWidth = 0.8;
   [[0,1],[1,2]].forEach(([a,b]) => {
     ctx.beginPath(); ctx.moveTo(starData[a].x*W, starData[a].y*H);
     ctx.lineTo(starData[b].x*W, starData[b].y*H); ctx.stroke();
@@ -2135,7 +2887,7 @@ function drawStarMap() {
   });
 
   const mw = ctx.createLinearGradient(0, H*0.3, W, H*0.8);
-  mw.addColorStop(0,'transparent'); mw.addColorStop(0.5,'rgba(175,82,222,0.04)'); mw.addColorStop(1,'transparent');
+  mw.addColorStop(0,'transparent'); mw.addColorStop(0.5,'rgba(91,124,153,0.04)'); mw.addColorStop(1,'transparent');
   ctx.fillStyle = mw; ctx.fillRect(0,0,W,H);
 }
 
@@ -2152,14 +2904,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  lucide.createIcons();
-
-  // Splash: hide after 2.6s
-  setTimeout(() => {
-    const splash = document.getElementById('splash');
-    splash.classList.add('hide');
-    setTimeout(() => splash.remove(), 600);
-  }, 2600);
+  // Splash is dismissed by lucide onload handler
 
   // ── ANDROID KEYBOARD SCROLL FIX ──
   // When soft keyboard opens on Android, the visual viewport shrinks.
@@ -2178,21 +2923,229 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('button, a, .pin-key, .photo-wrap').forEach(el => {
     el.style.touchAction = 'manipulation';
   });
+
+  // ── FLOATING PETALS ──
+  (function spawnPetals() {
+    const petals = ['🌸','🌺','💮','🌷','✨','💫','🌼','💕','🍀'];
+    const screen = document.getElementById('s-intro');
+    if (!screen) return;
+    function spawnOne() {
+      const p = document.createElement('div');
+      p.className = 'petal';
+      p.textContent = petals[Math.floor(Math.random() * petals.length)];
+      p.style.left = (5 + Math.random() * 90) + '%';
+      p.style.top = '-30px';
+      const dur = 8 + Math.random() * 10;
+      const delay = Math.random() * 6;
+      p.style.animationDuration = dur + 's';
+      p.style.animationDelay = delay + 's';
+      p.style.fontSize = (10 + Math.random() * 10) + 'px';
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), (dur + delay) * 1000 + 500);
+    }
+    for (let i = 0; i < 7; i++) spawnOne();
+    setInterval(spawnOne, 3000);
+  })();
+
+  // ── COUNTDOWN NUMBER TICK ANIMATION ──
+  ['cd-d','cd-h','cd-m','cd-s'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const orig = el.textContent;
+    el.addEventListener('DOMSubtreeModified', function() {
+      this.style.transform = 'scale(1.15)';
+      setTimeout(() => { this.style.transform = ''; }, 100);
+    });
+  });
 });
+  // ── SCRATCH CARD ──
+  const SCRATCH_MESSAGES = [
+    { emoji: '🌸', title: 'You are loved more than you know', msg: 'Every single day, quietly and sincerely — you are thought of, cared for, and loved. Never forget that, Ammu.' },
+    { emoji: '✨', title: 'Your talent is extraordinary', msg: 'The way you see beauty and bring it to life with your hands — that is a rare gift. The world needs more of what you create.' },
+    { emoji: '💜', title: 'You make everyone around you better', msg: 'The strength you carry for your family, the warmth you give without asking anything in return — that is who you are, Mu.' },
+    { emoji: '🌹', title: 'The best is still ahead of you', msg: 'Every dream you\'re quietly working toward will find its way to you. Your story is just getting started.' },
+    { emoji: '🌙', title: 'You deserve all the good things', msg: 'Happiness, peace, success, love — you deserve every last bit of it. Today and always. Happy Birthday, Ammu. 🎂' },
+  ];
+
+  let scratchCard = null;
+  let scratchMsgIdx = 0;
+  let scratchDone = false;
+
+  function initScratch() {
+    const canvas = document.getElementById('scratch-canvas');
+    if (!canvas) return;
+    const frame = canvas.parentElement;
+    const W = frame.offsetWidth;
+    const H = frame.offsetHeight;
+    canvas.width = W;
+    canvas.height = H;
+
+    // Pick a random message
+    scratchMsgIdx = Math.floor(Math.random() * SCRATCH_MESSAGES.length);
+    const m = SCRATCH_MESSAGES[scratchMsgIdx];
+    document.getElementById('scratch-emoji').textContent = m.emoji;
+    document.getElementById('scratch-title').textContent = m.title;
+    document.getElementById('scratch-msg').textContent = m.msg;
+
+    const ctx = canvas.getContext('2d');
+    scratchDone = false;
+    document.getElementById('scratch-fill').style.width = '0%';
+    document.getElementById('scratch-pct').textContent = '0% scratched';
+    document.getElementById('scratch-reset-btn').style.display = 'none';
+    document.getElementById('scratch-done-msg').style.display = 'none';
+    document.getElementById('scratch-hint').textContent = 'Scratch the card to reveal your surprise 🌸';
+
+    // Draw scratch layer — warm gold gradient with pattern
+    const grad = ctx.createLinearGradient(0, 0, W, H);
+    grad.addColorStop(0, '#C1622D');
+    grad.addColorStop(0.4, '#D4744A');
+    grad.addColorStop(0.7, '#E0935C');
+    grad.addColorStop(1, '#C1622D');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
+
+    // Decorative pattern on scratch layer
+    ctx.globalAlpha = 0.08;
+    ctx.fillStyle = '#fff';
+    for (let i = 0; i < 200; i++) {
+      const x = Math.random() * W;
+      const y = Math.random() * H;
+      const r = 1 + Math.random() * 3;
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.globalAlpha = 0.12;
+    for (let i = 0; i < 12; i++) {
+      ctx.font = `${16 + Math.random() * 14}px serif`;
+      ctx.fillText(['🌸','✨','💜','🎁','🌹'][Math.floor(Math.random()*5)],
+        Math.random() * (W - 30), 20 + Math.random() * (H - 30));
+    }
+    ctx.globalAlpha = 1;
+
+    // Label
+    ctx.fillStyle = 'rgba(255,255,255,0.92)';
+    ctx.font = `700 ${Math.round(W * 0.042)}px IBM Plex Mono, monospace`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('SCRATCH HERE', W / 2, H / 2 - 10);
+    ctx.font = `400 ${Math.round(W * 0.028)}px IBM Plex Mono, monospace`;
+    ctx.fillStyle = 'rgba(255,255,255,0.65)';
+    ctx.fillText('use your finger  ✦', W / 2, H / 2 + 18);
+
+    // Scratch via destination-out
+    ctx.globalCompositeOperation = 'destination-out';
+
+    scratchCard = { ctx, W, H, isDown: false, lastX: 0, lastY: 0 };
+
+    // Events
+    canvas.addEventListener('mousedown', scratchStart);
+    canvas.addEventListener('mousemove', scratchMove);
+    canvas.addEventListener('mouseup', () => { if (scratchCard) scratchCard.isDown = false; });
+    canvas.addEventListener('touchstart', scratchStart, { passive: false });
+    canvas.addEventListener('touchmove', scratchMove, { passive: false });
+    canvas.addEventListener('touchend', () => { if (scratchCard) scratchCard.isDown = false; });
+  }
+
+  function getScratchPos(e, canvas) {
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    if (e.touches) {
+      return {
+        x: (e.touches[0].clientX - rect.left) * scaleX,
+        y: (e.touches[0].clientY - rect.top) * scaleY
+      };
+    }
+    return { x: (e.clientX - rect.left) * scaleX, y: (e.clientY - rect.top) * scaleY };
+  }
+
+  function scratchStart(e) {
+    e.preventDefault();
+    if (!scratchCard || scratchDone) return;
+    scratchCard.isDown = true;
+    const pos = getScratchPos(e, e.target);
+    scratchCard.lastX = pos.x; scratchCard.lastY = pos.y;
+    scratchDraw(pos.x, pos.y);
+  }
+
+  function scratchMove(e) {
+    e.preventDefault();
+    if (!scratchCard || !scratchCard.isDown || scratchDone) return;
+    const pos = getScratchPos(e, e.target);
+    const { ctx, lastX, lastY } = scratchCard;
+    ctx.lineWidth = 44;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(pos.x, pos.y);
+    ctx.stroke();
+    scratchCard.lastX = pos.x; scratchCard.lastY = pos.y;
+    checkScratchProgress();
+  }
+
+  function scratchDraw(x, y) {
+    const { ctx } = scratchCard;
+    ctx.beginPath();
+    ctx.arc(x, y, 22, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function checkScratchProgress() {
+    const { ctx, W, H } = scratchCard;
+    const imgData = ctx.getImageData(0, 0, W, H);
+    let cleared = 0;
+    for (let i = 3; i < imgData.data.length; i += 4) {
+      if (imgData.data[i] === 0) cleared++;
+    }
+    const pct = Math.round((cleared / (W * H)) * 100);
+    document.getElementById('scratch-fill').style.width = Math.min(pct, 100) + '%';
+    document.getElementById('scratch-pct').textContent = Math.min(pct, 100) + '% scratched';
+
+    if (pct >= 55 && !scratchDone) {
+      scratchDone = true;
+      // Clear remaining
+      scratchCard.ctx.clearRect(0, 0, W, H);
+      document.getElementById('scratch-fill').style.width = '100%';
+      document.getElementById('scratch-pct').textContent = '100% scratched';
+      document.getElementById('scratch-hint').textContent = 'You found it! 🎉';
+      document.getElementById('scratch-reset-btn').style.display = 'flex';
+      document.getElementById('scratch-done-msg').style.display = 'block';
+      confetti();
+    }
+  }
+
+  function resetScratch() {
+    const canvas = document.getElementById('scratch-canvas');
+    if (!canvas) return;
+    canvas.removeEventListener('mousedown', scratchStart);
+    canvas.removeEventListener('mousemove', scratchMove);
+    canvas.removeEventListener('touchstart', scratchStart);
+    canvas.removeEventListener('touchmove', scratchMove);
+    initScratch();
+  }
+
+  // Init scratch when navigating to it
+  const _origGo = typeof go !== 'undefined' ? go : null;
+  document.addEventListener('DOMContentLoaded', () => {
+    const origGo = window.go;
+    window.go = function(id) {
+      origGo(id);
+      if (id === 's-scratch') {
+        setTimeout(initScratch, 60);
+      }
+    };
+  });
 </script>
-<script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js">
-
-
-
-
-
-
-</script>
-
-
-
-
-
+<script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js" onload="
+  lucide.createIcons();
+  var splash = document.getElementById('splash');
+  if (splash) {
+    setTimeout(function() {
+      splash.classList.add('hide');
+      setTimeout(function() { if (splash.parentNode) splash.parentNode.removeChild(splash); }, 600);
+    }, 1800);
+  }
+"></script>
 
 <!-- BOTTOM NAV -->
 <nav class="bottom-nav" id="bottom-nav">
@@ -2215,6 +3168,10 @@ document.addEventListener('DOMContentLoaded', () => {
   <button class="nav-tab" id="nav-secret" onclick="navTo('s-pin','nav-secret')">
     <i data-lucide="lock"></i>
     <span>Secret</span>
+  </button>
+  <button class="nav-tab" id="nav-scratch" onclick="navTo('s-scratch','nav-scratch'); setTimeout(initScratch,80);">
+    <i data-lucide="gift"></i>
+    <span>Gift</span>
   </button>
   <button class="nav-tab" id="nav-profile" onclick="navTo('s-profile','nav-profile')">
     <div class="nav-avatar-wrap">
