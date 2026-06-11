@@ -752,9 +752,8 @@
 
   /* ── BOTTOM NAV FLOATING PILL ── */
   .bottom-nav {
-    display: none;
     position: fixed;
-    bottom: 16px;
+    bottom: max(16px, calc(8px + env(safe-area-inset-bottom, 0px)));
     left: 50%;
     transform: translateX(-50%);
     z-index: 200;
@@ -762,7 +761,7 @@
     border: 1.5px dashed rgba(45,92,74,0.32);
     border-radius: 18px;
     box-shadow: 0 10px 32px rgba(31,27,22,0.10), 0 2px 8px rgba(31,27,22,0.05);
-    display: flex;
+    display: none;
     align-items: center;
     padding: 6px 8px;
     gap: 2px;
@@ -839,7 +838,7 @@
     transform: translateY(-2px) scale(1.12);
   }
 
-  body { padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important; }
+  body { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important; }
 
   /* ── PROFILE SCREEN ── */
   .profile-hero {
@@ -2056,21 +2055,24 @@ Martin 🤍</div>
   <div class="title">From Martin, with love 💜</div>
   <div class="prose-card">
     <div class="prose-text">Dear Mu, 🌸
+
 And it's been 3 years… talking to you, seeing you, somewhere along the way, you became someone really special to me. I don't know if you ever felt the same way, but I truly loved you with all my heart. ❤️
 
 For the longest time, I kept holding onto the hope that maybe one day things would turn out differently between us. I trusted your words, your promises, and the memories we shared. Maybe that's why I stayed attached to you for so long. ✨
-
 But with time, I realized you had already moved on, and slowly, I had to accept that too. 🌙
 
-I won't lie, it hurt me deeply, because I never expected our story to end silently like this. But even after everything, I've never wished anything bad for you. I still genuinely want you to be happy, safe, successful, and at peace in life. 🌷
-
+I won't lie, it hurt me deeply because I never expected our story to end silently like this. But even after everything, I've never wished anything bad for you. I still genuinely want you to be happy, safe, successful, and at peace in life. 🌷
 If you ever face any problem, I'll always be there to help you however I can. 🤍
-
 Right now, I don't see another love chapter in my life. What I felt for you was real, and I don't think anyone could ever replace that. 💫
 
 I'm not the kind of person who can leave someone and go find another love easily. Once I gave my heart to you, it was real for me. I promised myself that you would be my first and last love, Mu. ❤️
 
-But please don't think I'm writing this to be toxic, to blame you, or to trouble you. I'm not that kind of person. I respect your choices, and I respect the path you've chosen in life. I won't forget you, but I will accept that you've moved on. 🌼
+Maybe I cared about you too much, Ammu. I kept calling you "Ammu," gave you all my love, and somewhere along the way, I made you my whole world. Maybe that's why I ended up feeling like I wasn't important to you anymore.
+Even now, I still care about you so much. The strange thing is, I can never stay angry with you. I don't know why. Maybe it's because I trusted you so much and loved you so deeply. ❤️
+
+Sometimes I feel like if we had just talked openly, maybe things could have been different. But at the same time, I was afraid that if I came back and tried to talk to you, you might think I was disturbing you or making your life difficult. So I chose to stay quiet.
+
+Please don't think I'm writing this to be toxic, to blame you, or to trouble you. I'm not that kind of person. I respect your choices, and I respect the path you've chosen in life. I won't forget you, but I will accept that you've moved on. 🌼
 
 I don't know if you'll read this message fully or not, but I just wanted to finally express what I've carried in my heart for all these years. No matter what happens, a part of me will always care about you. 🕊️
 
@@ -2079,6 +2081,7 @@ Be happy, Ammu. Stay blessed, stay safe, and may life give you everything you de
 I love you so much, and I miss you so much. ❤️🥺
 
 Take care always, Mu. 🌸
+
 Martin 🤍</div>
   </div>
   <button class="btn-primary" onclick="go('s-reply')">
@@ -2253,7 +2256,7 @@ Martin 🤍</div>
 </div>
 
 <script>
-const UNLOCK_DATE = new Date('2026-06-08T06:30:00');
+const UNLOCK_DATE = new Date('2026-06-13T23:30:00');
 const PIN = '080123';
 let pinEntry = '';
 
@@ -2545,7 +2548,7 @@ async function sendReply() {
   } catch(e) { /* silent */ }
 
   btn.style.display = 'none';
-  document.getElementById('reply-box').closest('textarea').style.display = 'none';
+  document.getElementById('reply-box').style.display = 'none';
   document.querySelector('#s-reply .caption').style.display = 'none';
   document.getElementById('reply-sent').style.display = 'block';
   setTimeout(() => {
@@ -2892,17 +2895,6 @@ function drawStarMap() {
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Restore nav visibility if previously unlocked
-  try {
-    if (localStorage.getItem('ammu_nav_visible') === '1') {
-      var nav = document.getElementById('bottom-nav');
-      if (nav) nav.classList.add('visible');
-    }
-  } catch(e) {}
-  _applyLockedStyles();
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   // Splash is dismissed by lucide onload handler
 
@@ -3125,7 +3117,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Init scratch when navigating to it
-  const _origGo = typeof go !== 'undefined' ? go : null;
   document.addEventListener('DOMContentLoaded', () => {
     const origGo = window.go;
     window.go = function(id) {
@@ -3136,7 +3127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   });
 </script>
-<script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js" onload="
+<script src="https://unpkg.com/lucide@1.17.0/dist/umd/lucide.min.js" onload="
   lucide.createIcons();
   var splash = document.getElementById('splash');
   if (splash) {
@@ -3150,7 +3141,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- BOTTOM NAV -->
 <nav class="bottom-nav" id="bottom-nav">
   <button class="nav-tab active" id="nav-home" onclick="navTo('s-intro','nav-home')">
-    <i data-lucide="home"></i>
+    <i data-lucide="house"></i>
     <span>Home</span>
   </button>
   <button class="nav-tab" id="nav-letter" onclick="navTo('s-wish','nav-letter')">
@@ -3166,7 +3157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <span>Stars</span>
   </button>
   <button class="nav-tab" id="nav-secret" onclick="navTo('s-pin','nav-secret')">
-    <i data-lucide="lock"></i>
+    <i data-lucide="lock-keyhole"></i>
     <span>Secret</span>
   </button>
   <button class="nav-tab" id="nav-scratch" onclick="navTo('s-scratch','nav-scratch'); setTimeout(initScratch,80);">
