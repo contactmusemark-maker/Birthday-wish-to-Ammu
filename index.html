@@ -2043,6 +2043,29 @@ Martin 🤍</div>
   </div>
 </div>
 
+<!-- S7-GATE: TIME TO READ? -->
+<div id="s-secret-gate" class="screen">
+  <div class="icon-wrap">
+    <i data-lucide="lock-keyhole-open" style="width:32px;height:32px;stroke:#C1622D;stroke-width:1.5;"></i>
+  </div>
+  <div class="title">Unlocked 🔓</div>
+  <div class="subtext" style="max-width: 300px;">There's a personal message waiting for you here.<br><br>Do you have time to read it right now?</div>
+  <div style="width:100%; display:flex; flex-direction:column; gap:12px; margin-top:8px;">
+    <button class="btn-primary" onclick="notify('gate_yes'); go('s-secret')">
+      <i data-lucide="book-open-text" style="width:20px;height:20px;stroke:#fff;"></i>
+      Yes, I'm free — show me 💌
+    </button>
+    <button class="btn-secondary" onclick="notify('gate_no'); showNotFreeMsg()">
+      <i data-lucide="clock" style="width:20px;height:20px;"></i>
+      Not right now
+    </button>
+  </div>
+  <div id="not-free-msg" style="display:none; text-align:center; padding: 16px 20px; background: var(--fill-tertiary); border-radius: var(--radius-card); border: 1.5px dashed rgba(45,92,74,0.22); width:100%;">
+    <div style="font-size:22px; margin-bottom:8px;">🌸</div>
+    <div style="font-size:16px; color: var(--text); line-height:1.7; letter-spacing:-0.1px;">That's okay, Ammu.<br>Come back when you're free.<br>The message will be waiting for you. 🤍</div>
+  </div>
+</div>
+
 <!-- S7: SECRET MESSAGE -->
 <div id="s-secret" class="screen scroll">
   <button class="back-btn" onclick="go('s-pin')">
@@ -2059,18 +2082,32 @@ Martin 🤍</div>
 And it's been 3 years… talking to you, seeing you, somewhere along the way, you became someone really special to me. I don't know if you ever felt the same way, but I truly loved you with all my heart. ❤️
 
 For the longest time, I kept holding onto the hope that maybe one day things would turn out differently between us. I trusted your words, your promises, and the memories we shared. Maybe that's why I stayed attached to you for so long. ✨
+
 But with time, I realized you had already moved on, and slowly, I had to accept that too. 🌙
 
 I won't lie, it hurt me deeply because I never expected our story to end silently like this. But even after everything, I've never wished anything bad for you. I still genuinely want you to be happy, safe, successful, and at peace in life. 🌷
+
 If you ever face any problem, I'll always be there to help you however I can. 🤍
+
 Right now, I don't see another love chapter in my life. What I felt for you was real, and I don't think anyone could ever replace that. 💫
 
 I'm not the kind of person who can leave someone and go find another love easily. Once I gave my heart to you, it was real for me. I promised myself that you would be my first and last love, Mu. ❤️
 
 Maybe I cared about you too much, Ammu. I kept calling you "Ammu," gave you all my love, and somewhere along the way, I made you my whole world. Maybe that's why I ended up feeling like I wasn't important to you anymore.
+
 Even now, I still care about you so much. The strange thing is, I can never stay angry with you. I don't know why. Maybe it's because I trusted you so much and loved you so deeply. ❤️
 
-Sometimes I feel like if we had just talked openly, maybe things could have been different. But at the same time, I was afraid that if I came back and tried to talk to you, you might think I was disturbing you or making your life difficult. So I chose to stay quiet.
+Sometimes I feel like if we had just talked openly, maybe things could have been different. If you had wanted to tell me directly that you didn't feel the same way, I wish you had told me. It would have hurt, but I would have understood. Instead, I held onto hope and waited for a long time because I trusted what you told me. That silence became one of the hardest things for me to carry.
+
+I really thought you would become a permanent part of my life, and maybe that's why it still hurts. You may think I don't understand you, but I always tried my best to understand you, your feelings, your struggles, and the person you are. 🤍
+
+I never wanted to bring all of this up. The truth is, I couldn't share these feelings with my friends or anyone else. I kept everything inside for so long, and carrying it alone became painful. That's why I wanted to finally tell you what was in my heart.
+
+I think you mean much more to me than you ever realized. ❤️
+
+For the past 6 months, I've been working on creating a website for you. Do you know why? Because I genuinely wanted to support you and help your career grow. I believe in your talent so much, and I wanted to create something that could help more people discover your work. ✨
+
+Your business can even be listed on Google so that more people can find you, contact you, and place orders. Please make use of it if you can. It would make me happy to see your work reach the success it deserves. 🌸
 
 Please don't think I'm writing this to be toxic, to blame you, or to trouble you. I'm not that kind of person. I respect your choices, and I respect the path you've chosen in life. I won't forget you, but I will accept that you've moved on. 🌼
 
@@ -2078,11 +2115,37 @@ I don't know if you'll read this message fully or not, but I just wanted to fina
 
 Be happy, Ammu. Stay blessed, stay safe, and may life give you everything you deserve. 🌹✨
 
+And one thing I want you to know, Ammu... I never truly moved on from you. Maybe I learned to live with the pain, maybe I learned to stay quiet, but my feelings for you never completely went away. ❤️
+
+Honestly, I still have so much more I could say. There are so many things I've kept in my heart all these years. But I think I'll stop here. Some feelings are better left unsaid. 🤍
+
 I love you so much, and I miss you so much. ❤️🥺
 
 Take care always, Mu. 🌸
 
 Martin 🤍</div>
+  </div>
+  <button class="btn-primary" onclick="go('s-afterword')">
+    <i data-lucide="arrow-right" style="width:22px;height:22px;stroke:#fff;"></i>
+    Next
+  </button>
+</div>
+
+<!-- S7B: AFTERWORD -->
+<div id="s-afterword" class="screen scroll">
+  <button class="back-btn" onclick="go('s-secret')">
+    <i data-lucide="chevron-left" style="width:22px;height:22px;stroke:#4C7A99;stroke-width:2.5;"></i>
+    Back
+  </button>
+  <div class="icon-wrap">
+    <i data-lucide="heart-handshake" style="width:32px;height:32px;stroke:#C1622D;stroke-width:1.5;"></i>
+  </div>
+  <div class="prose-card">
+    <div class="prose-text">Ammu, please know that I didn't say any of this to hurt you, make you feel guilty, or upset you. ❤️ I just wanted to be honest about what I've been carrying in my heart for all these years.
+
+I could never intentionally hurt you, and I never will. 🤍
+
+If anything I've said hurts you, I'm truly sorry. 🌷 That was never my intention. I just wanted you to know how much you meant to me and what I've been feeling all this time. ❤️</div>
   </div>
   <button class="btn-primary" onclick="go('s-reply')">
     <i data-lucide="message-circle" style="width:22px;height:22px;stroke:#fff;"></i>
@@ -2297,7 +2360,11 @@ async function notify(event) {
     download2:   `⬇️ She downloaded Photo 2!\n🕐 ${time}`,
     website:     `🌐 She opened her website (glambyharini.in)! 🎉\n🕐 ${time}`,
     copied:      `📋 She copied the website link!\n🕐 ${time}`,
-    secret:      `🔐 She unlocked the secret message! 💜🥺\n🕐 ${time}`
+    secret:      `🔐 She unlocked the secret message! 💜🥺\n🕐 ${time}`,
+    gate_yes:    `✅ She said YES — she's free and reading the message right now! 🥹💌\n🕐 ${time}`,
+    gate_no:     `⏳ She said she's not free right now — will come back later.\n🕐 ${time}`,
+    read_secret: `📖 She's reading the secret message... 💜\n🕐 ${time}`,
+    read_afterword: `🌷 She reached the afterword — read everything. 🥺❤️\n🕐 ${time}`
   };
   try {
     await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
@@ -2330,8 +2397,10 @@ var _tabUnlockMap = {
   's-photo1':  'stars',
   's-photo2':  'stars',
   's-website': 'stars',
-  's-pin':     'secret',
-  's-secret':  'secret',
+  's-pin':          'secret',
+  's-secret-gate':  'secret',
+  's-secret':       'secret',
+  's-afterword':    'secret',
   's-reply':   'secret',
   's-sent':    'secret',
 };
@@ -2424,8 +2493,10 @@ var _navMap = {
   's-photo1':  'nav-stars',
   's-photo2':  'nav-stars',
   's-website': 'nav-stars',
-  's-pin':     'nav-secret',
-  's-secret':  'nav-secret',
+  's-pin':          'nav-secret',
+  's-secret-gate':  'nav-secret',
+  's-secret':       'nav-secret',
+  's-afterword':    'nav-secret',
   's-reply':   'nav-secret',
   's-sent':    'nav-secret',
   's-scratch': 'nav-scratch',
@@ -2441,7 +2512,13 @@ function go(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   _setNav(_navMap[id] || 'nav-home');
   document.getElementById(id).classList.add('active');
-  if (id === 's-website' || id === 's-secret') confetti();
+  if (id === 's-website' || id === 's-secret' || id === 's-secret-gate') confetti();
+  if (id === 's-secret-gate') {
+    var nf = document.getElementById('not-free-msg');
+    if (nf) nf.style.display = 'none';
+  }
+  if (id === 's-secret')     notify('read_secret');
+  if (id === 's-afterword')  notify('read_afterword');
   if (id === 's-consent') { confetti(); notify('opened'); }
   if (id === 's-wish')    notify('accepted');
   if (id === 's-ignore')  notify('ignored');
@@ -2508,13 +2585,21 @@ function updatePinDots() {
 function checkPin() {
   if (pinEntry === PIN) {
     notify('secret');
-    go('s-secret'); pinEntry = ''; updatePinDots();
+    go('s-secret-gate'); pinEntry = ''; updatePinDots();
   } else {
     document.getElementById('pin-error').textContent = 'Wrong PIN. Try again 💕';
     const box = document.getElementById('pin-dots');
     box.classList.add('pin-shake');
     setTimeout(() => box.classList.remove('pin-shake'), 400);
     pinEntry = ''; updatePinDots();
+  }
+}
+
+function showNotFreeMsg() {
+  var msg = document.getElementById('not-free-msg');
+  if (msg) {
+    msg.style.display = 'block';
+    msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 }
 
